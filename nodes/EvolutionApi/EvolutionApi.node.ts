@@ -643,6 +643,19 @@ export class EvolutionApi implements INodeType {
                 },
             },
             {
+                displayName: 'List Footer Text',
+                name: 'listFooterText',
+                type: 'string',
+                default: '',
+                description: 'Texto do rodapé da lista',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendList'],
+                    },
+                },
+            },
+            {
                 displayName: 'List Sections',
                 name: 'listSections',
                 type: 'fixedCollection',
@@ -942,6 +955,7 @@ export class EvolutionApi implements INodeType {
                         const listTitle = this.getNodeParameter('listTitle', i) as string;
                         const listDescription = this.getNodeParameter('listDescription', i) as string;
                         const listButtonText = this.getNodeParameter('listButtonText', i) as string;
+                        const listFooterText = this.getNodeParameter('listFooterText', i) as string;
                         const listSections = this.getNodeParameter('listSections', i) as any;
 
                         // Processar seções da lista
@@ -972,12 +986,10 @@ export class EvolutionApi implements INodeType {
                             uri: `/message/sendList/${instanceName}`,
                             body: {
                                 number,
-                                listMessage: {
-                                    title: listTitle,
-                                    description: listDescription,
-                                    buttonText: listButtonText,
-                                    sections,
-                                },
+                                title: listTitle,
+                                footerText: listFooterText,
+                                buttonText: listButtonText,
+                                sections,
                             },
                         });
                     } else if (operation === 'sendButton') {
@@ -1001,11 +1013,9 @@ export class EvolutionApi implements INodeType {
                             uri: `/message/sendButtons/${instanceName}`,
                             body: {
                                 number,
-                                buttonMessage: {
-                                    title: buttonTitle,
-                                    description: buttonDescription,
-                                    buttons: processedButtons,
-                                },
+                                title: buttonTitle,
+                                description: buttonDescription,
+                                buttons: processedButtons,
                             },
                         });
                     }
