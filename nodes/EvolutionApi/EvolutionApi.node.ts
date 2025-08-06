@@ -786,6 +786,25 @@ export class EvolutionApi implements INodeType {
                                 default: '',
                                 description: 'ID do botão',
                             },
+                            {
+                                displayName: 'Button Type',
+                                name: 'buttonType',
+                                type: 'options',
+                                options: [
+                                    {
+                                        name: 'Reply',
+                                        value: 'reply',
+                                        description: 'Botão de resposta',
+                                    },
+                                    {
+                                        name: 'URL',
+                                        value: 'url',
+                                        description: 'Botão com URL',
+                                    },
+                                ],
+                                default: 'reply',
+                                description: 'Tipo do botão',
+                            },
                         ],
                     },
                 ],
@@ -1012,6 +1031,7 @@ export class EvolutionApi implements INodeType {
                                 processedButtons.push({
                                     buttonText: button.buttonText,
                                     buttonId: button.buttonId,
+                                    type: button.buttonType || 'reply',
                                 });
                             }
                         }
