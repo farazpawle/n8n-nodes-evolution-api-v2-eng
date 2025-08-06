@@ -953,12 +953,13 @@ export class EvolutionApi implements INodeType {
                         });
                     } else if (operation === 'sendList') {
                         const listTitle = this.getNodeParameter('listTitle', i) as string;
+                        const listDescription = this.getNodeParameter('listDescription', i) as string;
                         const listButtonText = this.getNodeParameter('listButtonText', i) as string;
                         const listFooterText = this.getNodeParameter('listFooterText', i) as string;
                         const listSections = this.getNodeParameter('listSections', i) as any;
 
                         // Processar seções da lista
-                        const sections = [];
+                        const values = [];
                         if (listSections.section) {
                             for (const section of listSections.section) {
                                 const processedSection: any = {
@@ -976,7 +977,7 @@ export class EvolutionApi implements INodeType {
                                     }
                                 }
 
-                                sections.push(processedSection);
+                                values.push(processedSection);
                             }
                         }
 
@@ -986,9 +987,10 @@ export class EvolutionApi implements INodeType {
                             body: {
                                 number,
                                 title: listTitle,
-                                footerText: listFooterText,
+                                description: listDescription,
                                 buttonText: listButtonText,
-                                sections,
+                                footerText: listFooterText,
+                                values,
                             },
                         });
                     } else if (operation === 'sendButton') {
