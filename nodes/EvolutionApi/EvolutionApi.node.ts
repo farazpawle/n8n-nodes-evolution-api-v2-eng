@@ -524,6 +524,84 @@ export class EvolutionApi implements INodeType {
                     },
                 },
             },
+            {
+                displayName: 'Image URL',
+                name: 'imageUrl',
+                type: 'string',
+                default: '',
+                description: 'URL da imagem',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendImage'],
+                    },
+                },
+            },
+            {
+                displayName: 'Caption',
+                name: 'caption',
+                type: 'string',
+                default: '',
+                description: 'Legenda da imagem',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendImage'],
+                    },
+                },
+            },
+            {
+                displayName: 'Video URL',
+                name: 'videoUrl',
+                type: 'string',
+                default: '',
+                description: 'URL do vídeo',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendVideo'],
+                    },
+                },
+            },
+            {
+                displayName: 'Audio URL',
+                name: 'audioUrl',
+                type: 'string',
+                default: '',
+                description: 'URL do áudio',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendAudio'],
+                    },
+                },
+            },
+            {
+                displayName: 'Document URL',
+                name: 'documentUrl',
+                type: 'string',
+                default: '',
+                description: 'URL do documento',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendDocument'],
+                    },
+                },
+            },
+            {
+                displayName: 'Document Name',
+                name: 'documentName',
+                type: 'string',
+                default: '',
+                description: 'Nome do documento',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendDocument'],
+                    },
+                },
+            },
             // Group specific fields
             {
                 displayName: 'Group ID',
@@ -629,7 +707,7 @@ export class EvolutionApi implements INodeType {
                             uri: `/message/sendText/${instanceName}`,
                             body: {
                                 number,
-                                textMessage: { text: messageText },
+                                text: messageText,
                             },
                         });
                     } else if (operation === 'sendImage') {
@@ -641,11 +719,48 @@ export class EvolutionApi implements INodeType {
                             uri: `/message/sendMedia/${instanceName}`,
                             body: {
                                 number,
-                                mediaMessage: {
-                                    mediatype: 'image',
-                                    media: imageUrl,
-                                    caption,
-                                },
+                                mediatype: 'image',
+                                media: imageUrl,
+                                caption,
+                            },
+                        });
+                    } else if (operation === 'sendVideo') {
+                        const videoUrl = this.getNodeParameter('videoUrl', i) as string;
+                        const caption = this.getNodeParameter('caption', i) as string;
+
+                        responseData = await this.helpers.requestWithAuthentication.call(this, 'evolutionApiApi', {
+                            method: 'POST',
+                            uri: `/message/sendMedia/${instanceName}`,
+                            body: {
+                                number,
+                                mediatype: 'video',
+                                media: videoUrl,
+                                caption,
+                            },
+                        });
+                    } else if (operation === 'sendAudio') {
+                        const audioUrl = this.getNodeParameter('audioUrl', i) as string;
+
+                        responseData = await this.helpers.requestWithAuthentication.call(this, 'evolutionApiApi', {
+                            method: 'POST',
+                            uri: `/message/sendWhatsAppAudio/${instanceName}`,
+                            body: {
+                                number,
+                                audio: audioUrl,
+                            },
+                        });
+                    } else if (operation === 'sendDocument') {
+                        const documentUrl = this.getNodeParameter('documentUrl', i) as string;
+                        const documentName = this.getNodeParameter('documentName', i) as string;
+
+                        responseData = await this.helpers.requestWithAuthentication.call(this, 'evolutionApiApi', {
+                            method: 'POST',
+                            uri: `/message/sendMedia/${instanceName}`,
+                            body: {
+                                number,
+                                mediatype: 'document',
+                                media: documentUrl,
+                                fileName: documentName,
                             },
                         });
                     }
@@ -697,7 +812,7 @@ export class EvolutionApi implements INodeType {
                             method: 'POST',
                             uri: `/webhook/set/${instanceName}`,
                             body: {
-                                uri: webhookUrl,
+                                url: webhookUrl,
                                 events,
                             },
                         });
@@ -714,7 +829,7 @@ export class EvolutionApi implements INodeType {
                             method: 'POST',
                             uri: `/chatwoot/set/${instanceName}`,
                             body: {
-                                uri: chatwootUrl,
+                                url: chatwootUrl,
                                 apiToken,
                             },
                         });
