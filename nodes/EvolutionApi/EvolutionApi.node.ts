@@ -1120,23 +1120,33 @@ export class EvolutionApi implements INodeType {
                     // Adicione mais operações de integração conforme necessário
                 }
 
-                // Processar a resposta para remover JSON stringificado
-                let processedResponse: IDataObject = responseData as IDataObject;
+                // Processar a resposta para garantir dados válidos
+                let processedResponse: IDataObject;
                 
-                // Se a resposta for uma string JSON, tentar fazer parse
-                if (typeof responseData === 'string') {
+                // Se a resposta for undefined ou null, criar objeto vazio
+                if (responseData === undefined || responseData === null) {
+                    processedResponse = { 
+                        success: true, 
+                        message: 'Operation completed successfully',
+                        timestamp: new Date().toISOString()
+                    };
+                }
+                // Se a resposta for uma string, tentar fazer parse
+                else if (typeof responseData === 'string') {
                     try {
                         processedResponse = JSON.parse(responseData);
                     } catch (e) {
-                        // Se não conseguir fazer parse, manter como string
-                        processedResponse = { value: responseData };
+                        processedResponse = { 
+                            value: responseData,
+                            success: true,
+                            timestamp: new Date().toISOString()
+                        };
                     }
                 }
-                
-                // Se a resposta for um array com JSON stringificado, processar
-                if (Array.isArray(processedResponse) && processedResponse.length > 0) {
+                // Se a resposta for um array, processar cada item
+                else if (Array.isArray(responseData)) {
                     const processedArray: IDataObject[] = [];
-                    for (const item of processedResponse) {
+                    for (const item of responseData) {
                         if (typeof item === 'string') {
                             try {
                                 processedArray.push(JSON.parse(item));
@@ -1147,7 +1157,20 @@ export class EvolutionApi implements INodeType {
                             processedArray.push(item as IDataObject);
                         }
                     }
-                    processedResponse = { items: processedArray };
+                    processedResponse = { 
+                        items: processedArray,
+                        success: true,
+                        count: processedArray.length,
+                        timestamp: new Date().toISOString()
+                    };
+                }
+                // Se for um objeto, usar diretamente
+                else {
+                    processedResponse = {
+                        ...responseData,
+                        success: true,
+                        timestamp: new Date().toISOString()
+                    };
                 }
                 
                 returnData.push(processedResponse);
