@@ -953,7 +953,6 @@ export class EvolutionApi implements INodeType {
                         });
                     } else if (operation === 'sendList') {
                         const listTitle = this.getNodeParameter('listTitle', i) as string;
-                        const listDescription = this.getNodeParameter('listDescription', i) as string;
                         const listButtonText = this.getNodeParameter('listButtonText', i) as string;
                         const listFooterText = this.getNodeParameter('listFooterText', i) as string;
                         const listSections = this.getNodeParameter('listSections', i) as any;
