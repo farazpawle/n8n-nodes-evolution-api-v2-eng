@@ -1,0 +1,63 @@
+{
+	"name": "n8n-nodes-evolution-api-v2",
+	"version": "1.0.0",
+	"description": "N8N Community Node for Evolution API v2",
+	"keywords": [
+		"n8n-community-node-package",
+		"evolution-api",
+		"whatsapp",
+		"api-v2"
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/jfcardososantos/n8n-nodes-evolution-api-v2",
+	"author": {
+		"name": "JF Cardoso Santos",
+		"email": "jfcardososantos@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jfcardososantos/n8n-nodes-evolution-api-v2.git"
+	},
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc && gulp build:icons",
+		"dev": "tsc --watch",
+		"format": "prettier nodes credentials --write",
+		"lint": "eslint nodes credentials package.json",
+		"lintfix": "eslint nodes credentials package.json --fix",
+		"prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json",
+		"release:patch": "npm version patch && npm publish && git push && git push --tags",
+		"release:minor": "npm version minor && npm publish && git push && git push --tags",
+		"release:major": "npm version major && npm publish && git push && git push --tags"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"nodes": [
+			"dist/nodes/EvolutionApi/EvolutionApi.node.js"
+		],
+		"credentials": [
+			"dist/credentials/EvolutionApiApi.credentials.js"
+		]
+	},
+	"dependencies": {
+		"axios": "^1.6.0"
+	},
+	"devDependencies": {
+		"@types/express": "^4.17.6",
+		"@types/request-promise-native": "1.0.21",
+		"@typescript-eslint/eslint-plugin": "^5.62.0",
+		"@typescript-eslint/parser": "^5.29.0",
+		"eslint-plugin-n8n-nodes-base": "^1.0.0",
+		"gulp": "^4.0.2",
+		"gulp-imagemin": "^7.1.0",
+		"gulp-rename": "^2.0.0",
+		"gulp-svgstore": "^9.0.0",
+		"n8n-core": "^0.125.0",
+		"n8n-workflow": "^0.107.0",
+		"prettier": "^2.7.1",
+		"typescript": "^4.9.0"
+	}
+}
