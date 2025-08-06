@@ -602,6 +602,181 @@ export class EvolutionApi implements INodeType {
                     },
                 },
             },
+            // List specific fields
+            {
+                displayName: 'List Title',
+                name: 'listTitle',
+                type: 'string',
+                default: '',
+                description: 'Título da lista',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendList'],
+                    },
+                },
+            },
+            {
+                displayName: 'List Description',
+                name: 'listDescription',
+                type: 'string',
+                default: '',
+                description: 'Descrição da lista',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendList'],
+                    },
+                },
+            },
+            {
+                displayName: 'List Button Text',
+                name: 'listButtonText',
+                type: 'string',
+                default: 'Ver opções',
+                description: 'Texto do botão da lista',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendList'],
+                    },
+                },
+            },
+            {
+                displayName: 'List Sections',
+                name: 'listSections',
+                type: 'fixedCollection',
+                typeOptions: {
+                    multipleValues: true,
+                },
+                default: {},
+                description: 'Seções da lista',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendList'],
+                    },
+                },
+                options: [
+                    {
+                        displayName: 'Section',
+                        name: 'section',
+                        values: [
+                            {
+                                displayName: 'Title',
+                                name: 'title',
+                                type: 'string',
+                                default: '',
+                                description: 'Título da seção',
+                            },
+                            {
+                                displayName: 'Rows',
+                                name: 'rows',
+                                type: 'fixedCollection',
+                                typeOptions: {
+                                    multipleValues: true,
+                                },
+                                default: {},
+                                description: 'Linhas da seção',
+                                options: [
+                                    {
+                                        displayName: 'Row',
+                                        name: 'row',
+                                        values: [
+                                            {
+                                                displayName: 'Title',
+                                                name: 'title',
+                                                type: 'string',
+                                                default: '',
+                                                description: 'Título da linha',
+                                            },
+                                            {
+                                                displayName: 'Description',
+                                                name: 'description',
+                                                type: 'string',
+                                                default: '',
+                                                description: 'Descrição da linha',
+                                            },
+                                            {
+                                                displayName: 'Row ID',
+                                                name: 'rowId',
+                                                type: 'string',
+                                                default: '',
+                                                description: 'ID da linha',
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            // Button specific fields
+            {
+                displayName: 'Button Title',
+                name: 'buttonTitle',
+                type: 'string',
+                default: '',
+                description: 'Título dos botões',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendButton'],
+                    },
+                },
+            },
+            {
+                displayName: 'Button Description',
+                name: 'buttonDescription',
+                type: 'string',
+                default: '',
+                description: 'Descrição dos botões',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendButton'],
+                    },
+                },
+            },
+            {
+                displayName: 'Buttons',
+                name: 'buttons',
+                type: 'fixedCollection',
+                typeOptions: {
+                    multipleValues: true,
+                },
+                default: {},
+                description: 'Botões',
+                displayOptions: {
+                    show: {
+                        resource: ['message'],
+                        operation: ['sendButton'],
+                    },
+                },
+                options: [
+                    {
+                        displayName: 'Button',
+                        name: 'button',
+                        values: [
+                            {
+                                displayName: 'Button Text',
+                                name: 'buttonText',
+                                type: 'string',
+                                default: '',
+                                description: 'Texto do botão',
+                            },
+                            {
+                                displayName: 'Button ID',
+                                name: 'buttonId',
+                                type: 'string',
+                                default: '',
+                                description: 'ID do botão',
+                            },
+                        ],
+                    },
+                ],
+            },
             // Group specific fields
             {
                 displayName: 'Group ID',
@@ -763,6 +938,76 @@ export class EvolutionApi implements INodeType {
                                 fileName: documentName,
                             },
                         });
+                    } else if (operation === 'sendList') {
+                        const listTitle = this.getNodeParameter('listTitle', i) as string;
+                        const listDescription = this.getNodeParameter('listDescription', i) as string;
+                        const listButtonText = this.getNodeParameter('listButtonText', i) as string;
+                        const listSections = this.getNodeParameter('listSections', i) as any;
+
+                        // Processar seções da lista
+                        const sections = [];
+                        if (listSections.section) {
+                            for (const section of listSections.section) {
+                                const processedSection: any = {
+                                    title: section.title,
+                                    rows: [],
+                                };
+
+                                if (section.rows && section.rows.row) {
+                                    for (const row of section.rows.row) {
+                                        processedSection.rows.push({
+                                            title: row.title,
+                                            description: row.description,
+                                            rowId: row.rowId,
+                                        });
+                                    }
+                                }
+
+                                sections.push(processedSection);
+                            }
+                        }
+
+                        responseData = await this.helpers.requestWithAuthentication.call(this, 'evolutionApiApi', {
+                            method: 'POST',
+                            uri: `/message/sendList/${instanceName}`,
+                            body: {
+                                number,
+                                listMessage: {
+                                    title: listTitle,
+                                    description: listDescription,
+                                    buttonText: listButtonText,
+                                    sections,
+                                },
+                            },
+                        });
+                    } else if (operation === 'sendButton') {
+                        const buttonTitle = this.getNodeParameter('buttonTitle', i) as string;
+                        const buttonDescription = this.getNodeParameter('buttonDescription', i) as string;
+                        const buttons = this.getNodeParameter('buttons', i) as any;
+
+                        // Processar botões
+                        const processedButtons = [];
+                        if (buttons.button) {
+                            for (const button of buttons.button) {
+                                processedButtons.push({
+                                    buttonText: button.buttonText,
+                                    buttonId: button.buttonId,
+                                });
+                            }
+                        }
+
+                        responseData = await this.helpers.requestWithAuthentication.call(this, 'evolutionApiApi', {
+                            method: 'POST',
+                            uri: `/message/sendButtons/${instanceName}`,
+                            body: {
+                                number,
+                                buttonMessage: {
+                                    title: buttonTitle,
+                                    description: buttonDescription,
+                                    buttons: processedButtons,
+                                },
+                            },
+                        });
                     }
                     // Adicione mais operações de mensagem conforme necessário
                 } else if (resource === 'group') {
@@ -837,7 +1082,37 @@ export class EvolutionApi implements INodeType {
                     // Adicione mais operações de integração conforme necessário
                 }
 
-                returnData.push(responseData);
+                // Processar a resposta para remover JSON stringificado
+                let processedResponse: IDataObject = responseData as IDataObject;
+                
+                // Se a resposta for uma string JSON, tentar fazer parse
+                if (typeof responseData === 'string') {
+                    try {
+                        processedResponse = JSON.parse(responseData);
+                    } catch (e) {
+                        // Se não conseguir fazer parse, manter como string
+                        processedResponse = { value: responseData };
+                    }
+                }
+                
+                // Se a resposta for um array com JSON stringificado, processar
+                if (Array.isArray(processedResponse) && processedResponse.length > 0) {
+                    const processedArray: IDataObject[] = [];
+                    for (const item of processedResponse) {
+                        if (typeof item === 'string') {
+                            try {
+                                processedArray.push(JSON.parse(item));
+                            } catch (e) {
+                                processedArray.push({ value: item });
+                            }
+                        } else {
+                            processedArray.push(item as IDataObject);
+                        }
+                    }
+                    processedResponse = { items: processedArray };
+                }
+                
+                returnData.push(processedResponse);
             } catch (error) {
                 if (this.continueOnFail()) {
                     const errorMessage = error instanceof Error ? error.message : String(error);
