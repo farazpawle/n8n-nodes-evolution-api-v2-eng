@@ -986,6 +986,11 @@ export class EvolutionApi implements INodeType {
                             uri: `/message/sendList/${instanceName}`,
                             body: {
                                 number,
+                                title: listTitle,
+                                description: listDescription,
+                                buttonText: listButtonText,
+                                footerText: listFooterText,
+                                sections,
                                 listMessage: {
                                     title: listTitle,
                                     description: listDescription,
