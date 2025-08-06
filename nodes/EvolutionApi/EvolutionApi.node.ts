@@ -26,13 +26,7 @@ export class EvolutionApi implements INodeType {
                 required: true,
             },
         ],
-        requestDefaults: {
-            baseURL: '={{$credentials?.serverUrl}}',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-        },
+
         properties: [
             {
                 displayName: 'Resource',
