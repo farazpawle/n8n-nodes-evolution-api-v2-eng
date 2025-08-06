@@ -959,7 +959,7 @@ export class EvolutionApi implements INodeType {
                         const listSections = this.getNodeParameter('listSections', i) as any;
 
                         // Processar seções da lista
-                        const values = [];
+                        const sections = [];
                         if (listSections.section) {
                             for (const section of listSections.section) {
                                 const processedSection: any = {
@@ -977,7 +977,7 @@ export class EvolutionApi implements INodeType {
                                     }
                                 }
 
-                                values.push(processedSection);
+                                sections.push(processedSection);
                             }
                         }
 
@@ -990,7 +990,7 @@ export class EvolutionApi implements INodeType {
                                 description: listDescription,
                                 buttonText: listButtonText,
                                 footerText: listFooterText,
-                                values,
+                                sections,
                             },
                         });
                     } else if (operation === 'sendButton') {
