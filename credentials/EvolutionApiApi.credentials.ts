@@ -16,7 +16,7 @@ export class EvolutionApiApi implements ICredentialType {
             type: 'string',
             default: 'http://localhost:8080',
             placeholder: 'http://localhost:8080',
-            description: 'URL do servidor Evolution API (ex: http://localhost:8080 ou https://seu-servidor.com)',
+            description: 'Evolution API server URL (e.g., http://localhost:8080 or https://your-server.com)',
             required: true,
         },
         {
@@ -27,7 +27,7 @@ export class EvolutionApiApi implements ICredentialType {
                 password: true,
             },
             default: '',
-            description: 'Chave da API (se necessário)',
+            description: 'API Key (if required)',
             required: false,
         },
         {
@@ -35,7 +35,7 @@ export class EvolutionApiApi implements ICredentialType {
             name: 'timeout',
             type: 'number',
             default: 30000,
-            description: 'Timeout em milissegundos para as requisições',
+            description: 'Timeout in milliseconds for requests',
             required: false,
         },
     ];

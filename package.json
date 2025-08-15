@@ -1,7 +1,7 @@
 {
-	"name": "n8n-nodes-evolution-api-v2",
-	"version": "1.1.11",
-	"description": "N8N Community Node for Evolution API v2",
+	"name": "n8n-nodes-evolution-api-v2-eng",
+	"version": "1.0.0",
+	"description": "N8N Community Node for Evolution API v2 - ENG",
 	"keywords": [
 		"n8n-community-node-package",
 		"evolution-api",
@@ -9,14 +9,14 @@
 		"api-v2"
 	],
 	"license": "MIT",
-	"homepage": "https://github.com/jfcardososantos/n8n-nodes-evolution-api-v2",
+	"homepage": "https://github.com/farazpawle/n8n-nodes-evolution-api-v2",
 	"author": {
-		"name": "JF Cardoso Santos",
-		"email": "jfcardososantos@gmail.com"
+		"name": "Faraz Pawle",
+		"email": "farazkhld@gmail.com"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/jfcardososantos/n8n-nodes-evolution-api-v2.git"
+		"url": "git+https://github.com/farazpawle/n8n-nodes-evolution-api-v2.git"
 	},
 	"main": "index.js",
 	"scripts": {

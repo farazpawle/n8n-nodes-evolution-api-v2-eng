@@ -1,182 +1,182 @@
-# Exemplos de Uso - Evolution API v2 Node
+# Usage Examples - Evolution API v2 Node
 
-## Configuração Inicial
+## Initial Setup
 
-### 1. Configurar Credenciais
-Primeiro, configure as credenciais da Evolution API:
-- **Server URL**: URL do seu servidor Evolution API (ex: `http://localhost:8080`)
-- **API Key**: Chave da API (se necessário)
-- **Instance Name**: Nome da instância (opcional)
-- **Timeout**: Timeout para requisições (padrão: 30000ms)
+### 1. Configure Credentials
+First, configure the Evolution API credentials:
+- **Server URL**: Your Evolution API server URL (e.g., `http://localhost:8080`)
+- **API Key**: API key (if needed)
+- **Instance Name**: Instance name (optional)
+- **Timeout**: Request timeout (default: 30000ms)
 
-### 2. Criar Instância
+### 2. Create Instance
 ```json
 {
   "resource": "instance",
   "operation": "createInstance",
-  "instanceName": "minha-instancia",
-  "instanceData": "{\"webhook\": \"https://meu-webhook.com\", \"webhookByEvents\": true}"
+  "instanceName": "my-instance",
+  "instanceData": "{\"webhook\": \"https://my-webhook.com\", \"webhookByEvents\": true}"
 }
 ```
 
-### 3. Conectar Instância
+### 3. Connect Instance
 ```json
 {
   "resource": "instance",
   "operation": "connectInstance",
-  "instanceName": "minha-instancia"
+  "instanceName": "my-instance"
 }
 ```
 
-## Envio de Mensagens
+## Message Sending
 
-### Enviar Texto Simples
+### Send Simple Text
 ```json
 {
   "resource": "message",
   "operation": "sendText",
-  "instanceName": "minha-instancia",
+  "instanceName": "my-instance",
   "number": "5511999999999",
-  "messageText": "Olá! Esta é uma mensagem de teste."
+  "messageText": "Hello! This is a test message."
 }
 ```
 
-### Enviar Imagem
+### Send Image
 ```json
 {
   "resource": "message",
   "operation": "sendImage",
-  "instanceName": "minha-instancia",
+  "instanceName": "my-instance",
   "number": "5511999999999",
-  "imageUrl": "https://exemplo.com/imagem.jpg",
-  "caption": "Legenda da imagem"
+  "imageUrl": "https://example.com/image.jpg",
+  "caption": "Image caption"
 }
 ```
 
-### Enviar Documento
+### Send Document
 ```json
 {
   "resource": "message",
   "operation": "sendDocument",
-  "instanceName": "minha-instancia",
+  "instanceName": "my-instance",
   "number": "5511999999999",
-  "documentUrl": "https://exemplo.com/documento.pdf",
-  "fileName": "documento.pdf",
-  "caption": "Aqui está o documento"
+  "documentUrl": "https://example.com/document.pdf",
+  "fileName": "document.pdf",
+  "caption": "Here is the document"
 }
 ```
 
-## Gerenciamento de Grupos
+## Group Management
 
-### Criar Grupo
+### Create Group
 ```json
 {
   "resource": "group",
   "operation": "createGroup",
-  "instanceName": "minha-instancia",
-  "subject": "Nome do Grupo",
+  "instanceName": "my-instance",
+  "subject": "Group Name",
   "participants": ["5511999999999", "5511888888888"]
 }
 ```
 
-### Buscar Membros do Grupo
+### Find Group Members
 ```json
 {
   "resource": "group",
   "operation": "findGroupMembers",
-  "instanceName": "minha-instancia",
+  "instanceName": "my-instance",
   "groupId": "123456789@group"
 }
 ```
 
-## Gerenciamento de Chat
+## Chat Management
 
-### Verificar Número
+### Check Number
 ```json
 {
   "resource": "chat",
   "operation": "checkIsWhatsApp",
-  "instanceName": "minha-instancia",
+  "instanceName": "my-instance",
   "number": "5511999999999"
 }
 ```
 
-### Marcar Mensagem como Lida
+### Mark Message as Read
 ```json
 {
   "resource": "chat",
   "operation": "markMessageAsRead",
-  "instanceName": "minha-instancia",
+  "instanceName": "my-instance",
   "messageId": "message-id-here"
 }
 ```
 
-## Configuração de Webhooks
+## Webhook Configuration
 
-### Configurar Webhook
+### Configure Webhook
 ```json
 {
   "resource": "event",
   "operation": "webhook",
-  "instanceName": "minha-instancia",
-  "webhookUrl": "https://meu-webhook.com/evolution",
+  "instanceName": "my-instance",
+  "webhookUrl": "https://my-webhook.com/evolution",
   "events": ["messages.upsert", "messages.update", "groups.upsert"]
 }
 ```
 
-## Integrações
+## Integrations
 
-### Configurar Chatwoot
+### Configure Chatwoot
 ```json
 {
   "resource": "integration",
   "operation": "chatwoot",
-  "instanceName": "minha-instancia",
-  "chatwootUrl": "https://meu-chatwoot.com",
-  "apiToken": "seu-api-token"
+  "instanceName": "my-instance",
+  "chatwootUrl": "https://my-chatwoot.com",
+  "apiToken": "your-api-token"
 }
 ```
 
-## Fluxos de Trabalho Comuns
+## Common Workflows
 
-### 1. Automação de Atendimento
-1. **Webhook Trigger**: Receber mensagens
-2. **Verificar Número**: Confirmar se é WhatsApp
-3. **Processar Mensagem**: Lógica de negócio
-4. **Enviar Resposta**: Resposta automática
+### 1. Customer Service Automation
+1. **Webhook Trigger**: Receive messages
+2. **Check Number**: Confirm if it's WhatsApp
+3. **Process Message**: Business logic
+4. **Send Response**: Automatic response
 
-### 2. Broadcast de Mensagens
-1. **Lista de Números**: Array de destinatários
-2. **Loop**: Para cada número
-3. **Enviar Mensagem**: Envio personalizado
-4. **Delay**: Aguardar entre envios
+### 2. Message Broadcasting
+1. **Number List**: Array of recipients
+2. **Loop**: For each number
+3. **Send Message**: Personalized sending
+4. **Delay**: Wait between sends
 
-### 3. Monitoramento de Grupos
-1. **Webhook**: Eventos de grupo
-2. **Filtrar Eventos**: Apenas eventos relevantes
-3. **Notificação**: Alertas para administradores
+### 3. Group Monitoring
+1. **Webhook**: Group events
+2. **Filter Events**: Only relevant events
+3. **Notification**: Alerts for administrators
 
-## Dicas de Uso
+## Usage Tips
 
-1. **Sempre use try-catch** para tratar erros
-2. **Implemente delays** entre operações para evitar rate limiting
-3. **Valide números** antes de enviar mensagens
-4. **Use webhooks** para receber eventos em tempo real
-5. **Mantenha logs** das operações para debug
+1. **Always use try-catch** to handle errors
+2. **Implement delays** between operations to avoid rate limiting
+3. **Validate numbers** before sending messages
+4. **Use webhooks** to receive real-time events
+5. **Keep logs** of operations for debugging
 
 ## Troubleshooting
 
-### Erro de Conexão
-- Verifique se o servidor Evolution API está rodando
-- Confirme a URL do servidor nas credenciais
-- Verifique se a instância está conectada
+### Connection Error
+- Check if Evolution API server is running
+- Confirm server URL in credentials
+- Verify if instance is connected
 
-### Erro de Autenticação
-- Verifique se a API Key está correta
-- Confirme se a instância existe
-- Verifique permissões da instância
+### Authentication Error
+- Check if API Key is correct
+- Confirm if instance exists
+- Verify instance permissions
 
-### Mensagens não Enviadas
-- Verifique se o número está no formato correto
-- Confirme se a instância está conectada
-- Verifique se o número é WhatsApp válido 
+### Messages Not Sent
+- Check if number format is correct
+- Confirm if instance is connected
+- Verify if number is valid WhatsApp 

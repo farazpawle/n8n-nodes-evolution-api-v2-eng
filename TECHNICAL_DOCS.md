@@ -1,8 +1,8 @@
-# Documentação Técnica - Evolution API v2 Node
+# Technical Documentation - Evolution API v2 Node
 
-## Arquitetura do Node
+## Node Architecture
 
-### Estrutura de Arquivos
+### File Structure
 ```
 n8n-nodes-evolution-api-v2/
 ├── credentials/
@@ -22,93 +22,93 @@ n8n-nodes-evolution-api-v2/
 └── TECHNICAL_DOCS.md
 ```
 
-### Componentes Principais
+### Main Components
 
-#### 1. Credenciais (EvolutionApiApi.credentials.ts)
-- **Propósito**: Configurar autenticação e conexão com a Evolution API
-- **Campos**:
-  - `serverUrl`: URL do servidor Evolution API
-  - `apiKey`: Chave da API (opcional)
-  - `instanceName`: Nome da instância (opcional)
-  - `timeout`: Timeout para requisições
+#### 1. Credentials (EvolutionApiApi.credentials.ts)
+- **Purpose**: Configure authentication and connection with Evolution API
+- **Fields**:
+  - `serverUrl`: Evolution API server URL
+  - `apiKey`: API key (optional)
+  - `instanceName`: Instance name (optional)
+  - `timeout`: Request timeout
 
-#### 2. Node Principal (EvolutionApi.node.ts)
-- **Propósito**: Implementar todas as operações da Evolution API v2
-- **Recursos**:
-  - Instância: Gerenciamento de instâncias
-  - Mensagem: Envio de diferentes tipos de mensagens
-  - Grupo: Gerenciamento de grupos
-  - Chat: Operações de chat e contatos
-  - Evento: Configuração de webhooks e eventos
-  - Integração: Integrações com outras plataformas
+#### 2. Main Node (EvolutionApi.node.ts)
+- **Purpose**: Implement all Evolution API v2 operations
+- **Resources**:
+  - Instance: Instance management
+  - Message: Sending different types of messages
+  - Group: Group management
+  - Chat: Chat and contact operations
+  - Event: Webhook and event configuration
+  - Integration: Integrations with other platforms
 
-## Operações Implementadas
+## Implemented Operations
 
-### Instância
-| Operação | Método | Endpoint | Descrição |
+### Instance
+| Operation | Method | Endpoint | Description |
 |----------|--------|----------|-----------|
-| createInstance | POST | `/instance/create` | Criar nova instância |
-| fetchInstances | GET | `/instance/fetchInstances` | Buscar todas as instâncias |
-| connectInstance | GET | `/instance/connect/{instanceName}` | Conectar instância |
-| restartInstance | PUT | `/instance/restart/{instanceName}` | Reiniciar instância |
-| connectionState | GET | `/instance/connectionState/{instanceName}` | Estado da conexão |
-| logoutInstance | DELETE | `/instance/logout/{instanceName}` | Desconectar instância |
-| deleteInstance | DELETE | `/instance/delete/{instanceName}` | Deletar instância |
-| setPresence | POST | `/instance/setPresence/{instanceName}` | Definir presença |
+| createInstance | POST | `/instance/create` | Create new instance |
+| fetchInstances | GET | `/instance/fetchInstances` | Fetch all instances |
+| connectInstance | GET | `/instance/connect/{instanceName}` | Connect instance |
+| restartInstance | PUT | `/instance/restart/{instanceName}` | Restart instance |
+| connectionState | GET | `/instance/connectionState/{instanceName}` | Connection state |
+| logoutInstance | DELETE | `/instance/logout/{instanceName}` | Disconnect instance |
+| deleteInstance | DELETE | `/instance/delete/{instanceName}` | Delete instance |
+| setPresence | POST | `/instance/setPresence/{instanceName}` | Set presence |
 
-### Mensagem
-| Operação | Método | Endpoint | Descrição |
+### Message
+| Operation | Method | Endpoint | Description |
 |----------|--------|----------|-----------|
-| sendText | POST | `/message/sendText/{instanceName}` | Enviar texto |
-| sendImage | POST | `/message/sendMedia/{instanceName}` | Enviar imagem |
-| sendVideo | POST | `/message/sendMedia/{instanceName}` | Enviar vídeo |
-| sendAudio | POST | `/message/sendMedia/{instanceName}` | Enviar áudio |
-| sendDocument | POST | `/message/sendMedia/{instanceName}` | Enviar documento |
-| sendPoll | POST | `/message/sendPoll/{instanceName}` | Enviar enquete |
-| sendContact | POST | `/message/sendContact/{instanceName}` | Enviar contato |
-| sendList | POST | `/message/sendList/{instanceName}` | Enviar lista |
-| sendButton | POST | `/message/sendButton/{instanceName}` | Enviar botão |
-| sendPix | POST | `/message/sendPix/{instanceName}` | Enviar PIX |
-| sendStatus | POST | `/message/sendStatus/{instanceName}` | Enviar status |
-| sendReaction | POST | `/message/sendReaction/{instanceName}` | Reagir a mensagem |
+| sendText | POST | `/message/sendText/{instanceName}` | Send text |
+| sendImage | POST | `/message/sendMedia/{instanceName}` | Send image |
+| sendVideo | POST | `/message/sendMedia/{instanceName}` | Send video |
+| sendAudio | POST | `/message/sendMedia/{instanceName}` | Send audio |
+| sendDocument | POST | `/message/sendMedia/{instanceName}` | Send document |
+| sendPoll | POST | `/message/sendPoll/{instanceName}` | Send poll |
+| sendContact | POST | `/message/sendContact/{instanceName}` | Send contact |
+| sendList | POST | `/message/sendList/{instanceName}` | Send list |
+| sendButton | POST | `/message/sendButton/{instanceName}` | Send button |
+| sendPix | POST | `/message/sendPix/{instanceName}` | Send PIX |
+| sendStatus | POST | `/message/sendStatus/{instanceName}` | Send status |
+| sendReaction | POST | `/message/sendReaction/{instanceName}` | React to message |
 
-### Grupo
+### Group
 | Operação | Método | Endpoint | Descrição |
 |----------|--------|----------|-----------|
 | createGroup | POST | `/group/create/{instanceName}` | Criar grupo |
 | updateGroupPicture | POST | `/group/updateGroupPicture/{instanceName}` | Atualizar imagem |
-| updateGroupSubject | POST | `/group/updateGroupSubject/{instanceName}` | Atualizar nome |
-| updateGroupDescription | POST | `/group/updateGroupDescription/{instanceName}` | Atualizar descrição |
-| updateGroupSetting | POST | `/group/updateGroupSetting/{instanceName}` | Atualizar configurações |
-| updateGroupMembers | POST | `/group/updateGroupMembers/{instanceName}` | Atualizar membros |
-| fetchInviteCode | GET | `/group/fetchInviteCode/{instanceName}/{groupId}` | Buscar link convite |
-| revokeInviteCode | POST | `/group/revokeInviteCode/{instanceName}` | Revogar link convite |
-| sendGroupInvite | POST | `/group/sendGroupInvite/{instanceName}` | Enviar convite |
-| findGroupMembers | GET | `/group/findGroupMembers/{instanceName}/{groupId}` | Buscar membros |
-| toggleEphemeral | POST | `/group/toggleEphemeral/{instanceName}` | Mensagens temporárias |
-| leaveGroup | DELETE | `/group/leaveGroup/{instanceName}` | Sair do grupo |
+| updateGroupSubject | POST | `/group/updateGroupSubject/{instanceName}` | Update name |
+| updateGroupDescription | POST | `/group/updateGroupDescription/{instanceName}` | Update description |
+| updateGroupSetting | POST | `/group/updateGroupSetting/{instanceName}` | Update settings |
+| updateGroupMembers | POST | `/group/updateGroupMembers/{instanceName}` | Update members |
+| fetchInviteCode | GET | `/group/fetchInviteCode/{instanceName}/{groupId}` | Fetch invite link |
+| revokeInviteCode | POST | `/group/revokeInviteCode/{instanceName}` | Revoke invite link |
+| sendGroupInvite | POST | `/group/sendGroupInvite/{instanceName}` | Send invite |
+| findGroupMembers | GET | `/group/findGroupMembers/{instanceName}/{groupId}` | Find members |
+| toggleEphemeral | POST | `/group/toggleEphemeral/{instanceName}` | Temporary messages |
+| leaveGroup | DELETE | `/group/leaveGroup/{instanceName}` | Leave group |
 
 ### Chat
-| Operação | Método | Endpoint | Descrição |
+| Operation | Method | Endpoint | Description |
 |----------|--------|----------|-----------|
-| checkIsWhatsApp | POST | `/chat/findChat/{instanceName}` | Verificar número |
-| markMessageAsRead | POST | `/chat/markMessageAsRead/{instanceName}` | Marcar como lida |
-| archiveChat | POST | `/chat/archiveChat/{instanceName}` | Arquivar chat |
-| markMessageAsUnread | POST | `/chat/markMessageAsUnread/{instanceName}` | Marcar como não lida |
-| deleteMessage | DELETE | `/chat/deleteMessage/{instanceName}` | Deletar mensagem |
-| fetchProfilePictureUrl | POST | `/chat/fetchProfilePictureUrl/{instanceName}` | Buscar foto perfil |
-| getBase64 | POST | `/chat/getBase64/{instanceName}` | Obter mídia base64 |
-| updateMessage | POST | `/chat/updateMessage/{instanceName}` | Editar mensagem |
-| sendPresence | POST | `/chat/sendPresence/{instanceName}` | Enviar presença |
-| updateBlockStatus | POST | `/chat/updateBlockStatus/{instanceName}` | Bloquear contato |
-| findContacts | POST | `/chat/findContacts/{instanceName}` | Buscar contatos |
-| findMessages | POST | `/chat/findMessages/{instanceName}` | Procurar mensagens |
-| findStatusMessage | POST | `/chat/findStatusMessage/{instanceName}` | Procurar status |
-| findChats | POST | `/chat/findChats/{instanceName}` | Procurar chats |
+| checkIsWhatsApp | POST | `/chat/findChat/{instanceName}` | Check number |
+| markMessageAsRead | POST | `/chat/markMessageAsRead/{instanceName}` | Mark as read |
+| archiveChat | POST | `/chat/archiveChat/{instanceName}` | Archive chat |
+| markMessageAsUnread | POST | `/chat/markMessageAsUnread/{instanceName}` | Mark as unread |
+| deleteMessage | DELETE | `/chat/deleteMessage/{instanceName}` | Delete message |
+| fetchProfilePictureUrl | POST | `/chat/fetchProfilePictureUrl/{instanceName}` | Fetch profile picture |
+| getBase64 | POST | `/chat/getBase64/{instanceName}` | Get media base64 |
+| updateMessage | POST | `/chat/updateMessage/{instanceName}` | Edit message |
+| sendPresence | POST | `/chat/sendPresence/{instanceName}` | Send presence |
+| updateBlockStatus | POST | `/chat/updateBlockStatus/{instanceName}` | Block contact |
+| findContacts | POST | `/chat/findContacts/{instanceName}` | Find contacts |
+| findMessages | POST | `/chat/findMessages/{instanceName}` | Search messages |
+| findStatusMessage | POST | `/chat/findStatusMessage/{instanceName}` | Search status |
+| findChats | POST | `/chat/findChats/{instanceName}` | Search chats |
 
-## Estrutura de Dados
+## Data Structure
 
-### Parâmetros Comuns
+### Common Parameters
 ```typescript
 interface CommonParams {
   instanceName: string;
@@ -117,7 +117,7 @@ interface CommonParams {
 }
 ```
 
-### Parâmetros de Mensagem
+### Message Parameters
 ```typescript
 interface MessageParams {
   number: string;
@@ -142,7 +142,7 @@ interface MessageParams {
 }
 ```
 
-### Parâmetros de Grupo
+### Group Parameters
 ```typescript
 interface GroupParams {
   subject: string;
@@ -152,15 +152,15 @@ interface GroupParams {
 }
 ```
 
-## Tratamento de Erros
+## Error Handling
 
-### Tipos de Erro Comuns
-1. **Erro de Conexão**: Servidor Evolution API não disponível
-2. **Erro de Autenticação**: API Key inválida ou instância não autorizada
-3. **Erro de Validação**: Parâmetros inválidos ou obrigatórios ausentes
-4. **Erro de Rate Limiting**: Muitas requisições em pouco tempo
+### Common Error Types
+1. **Connection Error**: Evolution API server not available
+2. **Authentication Error**: Invalid API Key or unauthorized instance
+3. **Validation Error**: Invalid or missing required parameters
+4. **Rate Limiting Error**: Too many requests in short time
 
-### Estratégias de Tratamento
+### Handling Strategies
 ```typescript
 try {
   const response = await this.helpers.requestWithAuthentication.call(this, 'evolutionApiApi', {
@@ -177,7 +177,7 @@ try {
 }
 ```
 
-## Configuração de Build
+## Build Configuration
 
 ### TypeScript
 - **Target**: ES2019
@@ -186,32 +186,32 @@ try {
 - **OutDir**: ./dist/
 
 ### Gulp Tasks
-- **build:icons**: Otimiza e combina ícones SVG
-- **build**: Compila TypeScript e constrói ícones
+- **build:icons**: Optimizes and combines SVG icons
+- **build**: Compiles TypeScript and builds icons
 
 ### ESLint
 - **Parser**: @typescript-eslint/parser
-- **Rules**: Configurações específicas para TypeScript
-- **Ignore**: dist/ e node_modules/
+- **Rules**: TypeScript-specific settings
+- **Ignore**: dist/ and node_modules/
 
-## Testes e Validação
+## Testing and Validation
 
-### Testes Manuais
-1. **Configuração de Credenciais**: Verificar conexão com servidor
-2. **Criação de Instância**: Testar criação e conexão
-3. **Envio de Mensagens**: Validar diferentes tipos de mensagem
-4. **Gerenciamento de Grupos**: Testar operações de grupo
-5. **Webhooks**: Verificar recebimento de eventos
+### Manual Testing
+1. **Credential Setup**: Verify server connection
+2. **Instance Creation**: Test creation and connection
+3. **Message Sending**: Validate different message types
+4. **Group Management**: Test group operations
+5. **Webhooks**: Verify event reception
 
-### Validação de Parâmetros
+### Parameter Validation
 ```typescript
-// Validar número de telefone
+// Validate phone number
 const validatePhoneNumber = (number: string): boolean => {
   const phoneRegex = /^[0-9]{10,15}$/;
   return phoneRegex.test(number.replace(/\D/g, ''));
 };
 
-// Validar URL
+// Validate URL
 const validateUrl = (url: string): boolean => {
   try {
     new URL(url);
@@ -222,30 +222,30 @@ const validateUrl = (url: string): boolean => {
 };
 ```
 
-## Performance e Otimização
+## Performance and Optimization
 
-### Estratégias de Performance
-1. **Reutilização de Conexões**: Manter conexões HTTP ativas
-2. **Cache de Instâncias**: Cachear dados de instâncias frequentemente usadas
-3. **Batch Operations**: Agrupar operações quando possível
-4. **Async/Await**: Usar operações assíncronas adequadamente
+### Performance Strategies
+1. **Connection Reuse**: Keep HTTP connections active
+2. **Instance Caching**: Cache frequently used instance data
+3. **Batch Operations**: Group operations when possible
+4. **Async/Await**: Use asynchronous operations properly
 
-### Monitoramento
-- **Logs de Requisição**: Registrar todas as operações
-- **Métricas de Performance**: Tempo de resposta e taxa de sucesso
-- **Alertas de Erro**: Notificações para falhas críticas
+### Monitoring
+- **Request Logs**: Log all operations
+- **Performance Metrics**: Response time and success rate
+- **Error Alerts**: Notifications for critical failures
 
-## Segurança
+## Security
 
-### Boas Práticas
-1. **Validação de Entrada**: Validar todos os parâmetros de entrada
-2. **Sanitização**: Limpar dados antes de enviar para API
-3. **Rate Limiting**: Implementar limites de requisição
-4. **Logs Seguros**: Não logar informações sensíveis
+### Best Practices
+1. **Input Validation**: Validate all input parameters
+2. **Sanitization**: Clean data before sending to API
+3. **Rate Limiting**: Implement request limits
+4. **Secure Logs**: Don't log sensitive information
 
-### Configurações de Segurança
+### Security Settings
 ```typescript
-// Headers de segurança
+// Security headers
 const securityHeaders = {
   'Content-Security-Policy': "default-src 'self'",
   'X-Content-Type-Options': 'nosniff',
@@ -254,15 +254,15 @@ const securityHeaders = {
 };
 ```
 
-## Compatibilidade
+## Compatibility
 
-### Versões Suportadas
+### Supported Versions
 - **Evolution API**: v2.x
 - **Node.js**: >= 14.0.0
 - **TypeScript**: >= 4.6.4
 - **N8N**: >= 0.125.0
 
-### Navegadores Suportados
+### Supported Browsers
 - Chrome >= 80
 - Firefox >= 75
 - Safari >= 13
@@ -270,16 +270,16 @@ const securityHeaders = {
 
 ## Roadmap
 
-### Próximas Funcionalidades
-1. **Suporte a Múltiplas Instâncias**: Gerenciamento simultâneo
-2. **Templates de Mensagem**: Templates pré-definidos
-3. **Scheduler**: Agendamento de mensagens
-4. **Analytics**: Métricas e relatórios
-5. **Webhook Filters**: Filtros avançados para webhooks
+### Upcoming Features
+1. **Multi-Instance Support**: Simultaneous management
+2. **Message Templates**: Pre-defined templates
+3. **Scheduler**: Message scheduling
+4. **Analytics**: Metrics and reports
+5. **Webhook Filters**: Advanced webhook filters
 
-### Melhorias Planejadas
-1. **Cache Inteligente**: Cache baseado em tempo de vida
-2. **Retry Logic**: Lógica de retry automático
-3. **Bulk Operations**: Operações em lote
-4. **Real-time Updates**: Atualizações em tempo real
-5. **Advanced Error Handling**: Tratamento de erro mais robusto 
+### Planned Improvements
+1. **Smart Cache**: Time-based cache
+2. **Retry Logic**: Automatic retry logic
+3. **Bulk Operations**: Batch operations
+4. **Real-time Updates**: Real-time updates
+5. **Advanced Error Handling**: More robust error handling 

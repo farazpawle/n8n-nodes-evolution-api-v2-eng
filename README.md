@@ -1,97 +1,97 @@
 # N8N Evolution API v2 Community Node
 
-Este é um community node para o N8N que permite integração com a Evolution API v2 para WhatsApp.
+This is a community node for N8N that allows integration with Evolution API v2 for WhatsApp.
 
-## 🚀 Funcionalidades
+## 🚀 Features
 
-- **Gerenciamento de Instâncias**: Criar, conectar, desconectar e gerenciar instâncias do WhatsApp
-- **Envio de Mensagens**: Enviar mensagens de texto e mídia
-- **Gerenciamento de Grupos**: Criar grupos e buscar membros
-- **Verificação de Chat**: Verificar se um número é WhatsApp
-- **Webhooks**: Configurar webhooks para eventos
-- **Integrações**: Suporte para integração com Chatwoot
+- **Instance Management**: Create, connect, disconnect and manage WhatsApp instances
+- **Message Sending**: Send text and media messages
+- **Group Management**: Create groups and search members
+- **Chat Verification**: Check if a number is WhatsApp
+- **Webhooks**: Configure webhooks for events
+- **Integrations**: Support for Chatwoot integration
 
-## 📦 Instalação
+## 📦 Installation
 
-### Via NPM (Recomendado)
+### Via NPM (Recommended)
 
 ```bash
-npm install n8n-nodes-evolution-api-v2
+npm install n8n-nodes-evolution-api-v2-eng
 ```
 
 ### Via N8N Community Nodes
 
-1. Vá para **Settings** > **Community Nodes**
-2. Clique em **Install**
-3. Digite: `n8n-nodes-evolution-api-v2`
-4. Clique em **Install**
+1. Go to **Settings** > **Community Nodes**
+2. Click **Install**
+3. Enter: `n8n-nodes-evolution-api-v2-eng`
+4. Click **Install**
 
-## 🔧 Configuração
+## 🔧 Configuration
 
-### Credenciais
+### Credentials
 
-1. Crie uma nova credencial do tipo **Evolution API**
+1. Create a new credential of type **Evolution API**
 2. Configure:
-   - **Server URL**: URL do seu servidor Evolution API
-   - **API Token**: Token de autenticação da API
+   - **Server URL**: URL of your Evolution API server
+   - **API Token**: API authentication token
 
-### Recursos Disponíveis
+### Available Resources
 
-#### Instância
-- **Criar Instância**: Cria uma nova instância do WhatsApp
-- **Buscar Instâncias**: Lista todas as instâncias disponíveis
-- **Conectar Instância**: Conecta a uma instância específica
-- **Reiniciar Instância**: Reinicia uma instância
-- **Estado da Conexão**: Verifica o estado da conexão
-- **Logout**: Faz logout de uma instância
-- **Deletar Instância**: Remove uma instância
-- **Definir Presença**: Define o status de presença
+#### Instance
+- **Create Instance**: Creates a new WhatsApp instance
+- **Fetch Instances**: Lists all available instances
+- **Connect Instance**: Connects to a specific instance
+- **Restart Instance**: Restarts an instance
+- **Connection State**: Checks connection state
+- **Logout**: Logs out of an instance
+- **Delete Instance**: Removes an instance
+- **Set Presence**: Sets presence status
 
-#### Mensagem
-- **Enviar Texto**: Envia uma mensagem de texto
-- **Enviar Imagem**: Envia uma imagem com legenda
+#### Message
+- **Send Text**: Sends a text message
+- **Send Image**: Sends an image with caption
 
-#### Grupo
-- **Criar Grupo**: Cria um novo grupo
-- **Buscar Membros**: Lista membros de um grupo
+#### Group
+- **Create Group**: Creates a new group
+- **Find Members**: Lists group members
 
 #### Chat
-- **Verificar WhatsApp**: Verifica se um número é WhatsApp
+- **Check WhatsApp**: Checks if a number is WhatsApp
 
-#### Evento
-- **Webhook**: Configura webhooks para eventos
+#### Event
+- **Webhook**: Configures webhooks for events
 
-#### Integração
-- **Chatwoot**: Configura integração com Chatwoot
+#### Integration
+- **Chatwoot**: Configures Chatwoot integration
 
-## 🛠️ Desenvolvimento
+## 🛠️ Development
 
-### Pré-requisitos
+### Prerequisites
 
 - Node.js 18+
-- npm ou yarn
+- npm or yarn
 
-### Instalação Local
+### Local Installation
 
 ```bash
-git clone https://github.com/jfcardososantos/n8n-nodes-evolution-api-v2.git
+git clone https://github.com/farazpawle/n8n-nodes-evolution-api-v2.git
 cd n8n-nodes-evolution-api-v2
 npm install
 ```
 
-### Scripts Disponíveis
+### Available Scripts
 
 ```bash
-# Build do projeto
+# Build project
 npm run build
 
-# Desenvolvimento com watch
+# Development with watch
 npm run dev
 
 # Linting
 npm run lint
 
-# Formatação
+# Formatting
 npm run format
 
 # Release (patch, minor, major)
@@ -100,49 +100,53 @@ npm run release:minor
 npm run release:major
 ```
 
-## 📝 Exemplos de Uso
+## 📝 Usage Examples
 
-### Enviar Mensagem de Texto
+### Send Text Message
 
 ```javascript
-// Configuração do node
+// Node configuration
 {
   "resource": "message",
   "operation": "sendText",
-  "instanceName": "minha-instancia",
+  "instanceName": "my-instance",
   "number": "5511999999999",
-  "messageText": "Olá! Esta é uma mensagem de teste."
+  "messageText": "Hello! This is a test message."
 }
 ```
 
-### Criar Grupo
+### Create Group
 
 ```javascript
-// Configuração do node
+// Node configuration
 {
   "resource": "group",
   "operation": "createGroup",
-  "instanceName": "minha-instancia",
-  "subject": "Grupo de Teste",
+  "instanceName": "my-instance",
+  "subject": "Test Group",
   "participants": ["5511999999999", "5511888888888"]
 }
 ```
 
-## 🤝 Contribuição
+## 🤝 Contributing
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📄 Licença
+## 📄 License
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
-**JF Cardoso Santos**
+**Faraz Pawle** (Fork maintainer)
+- Email: farazkhld@gmail.com
+- GitHub: [@farazpawle](https://github.com/farazpawle)
+
+**Original Author: JF Cardoso Santos**
 - Email: jfcardososantos@gmail.com
 - GitHub: [@jfcardososantos](https://github.com/jfcardososantos)
 
@@ -150,16 +154,16 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 - [N8N](https://n8n.io/)
 - [Evolution API](https://doc.evolution-api.com/)
-- [NPM Package](https://www.npmjs.com/package/n8n-nodes-evolution-api-v2)
+- [NPM Package](https://www.npmjs.com/package/n8n-nodes-evolution-api-v2-eng)
 
-## 📈 Versionamento
+## 📈 Versioning
 
-Este projeto usa [SemVer](http://semver.org/) para versionamento. Para ver as versões disponíveis, veja as [tags neste repositório](https://github.com/jfcardososantos/n8n-nodes-evolution-api-v2/tags).
+This project uses [SemVer](http://semver.org/) for versioning. To see available versions, check the [tags in this repository](https://github.com/farazpawle/n8n-nodes-evolution-api-v2/tags).
 
-## 🆘 Suporte
+## 🆘 Support
 
-Se você encontrar algum problema ou tiver dúvidas, por favor:
+If you encounter any problems or have questions, please:
 
-1. Verifique a [documentação da Evolution API](https://doc.evolution-api.com/)
-2. Abra uma [issue no GitHub](https://github.com/jfcardososantos/n8n-nodes-evolution-api-v2/issues)
-3. Entre em contato via email: jfcardososantos@gmail.com 
+1. Check the [Evolution API documentation](https://doc.evolution-api.com/)
+2. Open an [issue on GitHub](https://github.com/farazpawle/n8n-nodes-evolution-api-v2/issues)
+3. Contact via email: farazkhld@gmail.com 

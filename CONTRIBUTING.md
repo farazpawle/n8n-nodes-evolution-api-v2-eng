@@ -1,41 +1,41 @@
-# Guia de Contribuição
+# Contributing Guide
 
-## Como Contribuir
+## How to Contribute
 
-### 1. Fork e Clone
-1. Faça um fork do repositório
-2. Clone o seu fork localmente
-3. Crie uma branch para sua feature: `git checkout -b feature/nova-funcionalidade`
+### 1. Fork and Clone
+1. Fork the repository
+2. Clone your fork locally
+3. Create a branch for your feature: `git checkout -b feature/new-functionality`
 
-### 2. Desenvolvimento
-1. Instale as dependências: `npm install`
-2. Execute o modo de desenvolvimento: `npm run dev`
-3. Faça suas alterações seguindo os padrões do projeto
+### 2. Development
+1. Install dependencies: `npm install`
+2. Run development mode: `npm run dev`
+3. Make your changes following project standards
 
-### 3. Testes
-1. Execute os testes: `npm test`
-2. Verifique o linting: `npm run lint`
-3. Formate o código: `npm run format`
+### 3. Testing
+1. Run tests: `npm test`
+2. Check linting: `npm run lint`
+3. Format code: `npm run format`
 
-### 4. Commit e Push
-1. Adicione suas alterações: `git add .`
-2. Faça o commit: `git commit -m "feat: adiciona nova funcionalidade"`
-3. Faça o push: `git push origin feature/nova-funcionalidade`
+### 4. Commit and Push
+1. Add your changes: `git add .`
+2. Make commit: `git commit -m "feat: add new functionality"`
+3. Push: `git push origin feature/new-functionality`
 
 ### 5. Pull Request
-1. Crie um Pull Request no GitHub
-2. Descreva suas alterações
-3. Aguarde a revisão
+1. Create a Pull Request on GitHub
+2. Describe your changes
+3. Wait for review
 
-## Padrões de Código
+## Code Standards
 
 ### TypeScript
 - Use TypeScript strict mode
-- Defina tipos para todas as funções
-- Use interfaces para estruturas de dados
-- Evite `any` quando possível
+- Define types for all functions
+- Use interfaces for data structures
+- Avoid `any` when possible
 
-### Estrutura de Arquivos
+### File Structure
 ```
 nodes/
 ├── EvolutionApi/
@@ -45,21 +45,21 @@ credentials/
 └── EvolutionApiApi.credentials.ts
 ```
 
-### Nomenclatura
-- **Arquivos**: PascalCase para classes, camelCase para funções
-- **Variáveis**: camelCase
-- **Constantes**: UPPER_SNAKE_CASE
-- **Interfaces**: PascalCase com prefixo I
+### Naming
+- **Files**: PascalCase for classes, camelCase for functions
+- **Variables**: camelCase
+- **Constants**: UPPER_SNAKE_CASE
+- **Interfaces**: PascalCase with I prefix
 
-### Documentação
-- Comente funções complexas
-- Use JSDoc para APIs públicas
-- Mantenha o README atualizado
-- Documente mudanças breaking
+### Documentation
+- Comment complex functions
+- Use JSDoc for public APIs
+- Keep README updated
+- Document breaking changes
 
-## Testes
+## Testing
 
-### Testes Unitários
+### Unit Tests
 ```typescript
 describe('EvolutionApi Node', () => {
   it('should create instance successfully', async () => {
@@ -68,82 +68,82 @@ describe('EvolutionApi Node', () => {
 });
 ```
 
-### Testes de Integração
-- Teste com servidor Evolution API real
-- Verifique todos os endpoints
-- Teste cenários de erro
+### Integration Tests
+- Test with real Evolution API server
+- Verify all endpoints
+- Test error scenarios
 
-## Checklist de Pull Request
+## Pull Request Checklist
 
-- [ ] Código segue os padrões do projeto
-- [ ] Testes passam
-- [ ] Linting não mostra erros
-- [ ] Documentação atualizada
-- [ ] Não quebra funcionalidades existentes
-- [ ] Adiciona testes para novas funcionalidades
+- [ ] Code follows project standards
+- [ ] Tests pass
+- [ ] Linting shows no errors
+- [ ] Documentation updated
+- [ ] Doesn't break existing functionality
+- [ ] Adds tests for new features
 
-## Reportando Bugs
+## Reporting Bugs
 
-### Template de Bug Report
+### Bug Report Template
 ```markdown
-**Descrição do Bug**
-Descrição clara e concisa do bug.
+**Bug Description**
+Clear and concise description of the bug.
 
-**Passos para Reproduzir**
-1. Vá para '...'
-2. Clique em '...'
-3. Role até '...'
-4. Veja o erro
+**Steps to Reproduce**
+1. Go to '...'
+2. Click on '...'
+3. Scroll to '...'
+4. See error
 
-**Comportamento Esperado**
-O que deveria acontecer.
+**Expected Behavior**
+What should happen.
 
-**Comportamento Atual**
-O que está acontecendo.
+**Actual Behavior**
+What is happening.
 
 **Screenshots**
-Se aplicável, adicione screenshots.
+If applicable, add screenshots.
 
-**Ambiente**
-- OS: [ex: Ubuntu 20.04]
-- Node.js: [ex: 16.0.0]
-- N8N: [ex: 0.125.0]
-- Evolution API: [ex: 2.0.0]
+**Environment**
+- OS: [eg: Ubuntu 20.04]
+- Node.js: [eg: 16.0.0]
+- N8N: [eg: 0.125.0]
+- Evolution API: [eg: 2.0.0]
 
-**Informações Adicionais**
-Qualquer contexto adicional sobre o problema.
+**Additional Information**
+Any additional context about the problem.
 ```
 
-## Sugerindo Features
+## Suggesting Features
 
-### Template de Feature Request
+### Feature Request Template
 ```markdown
-**Problema que a feature resolve**
-Descrição clara do problema.
+**Problem the feature solves**
+Clear description of the problem.
 
-**Solução proposta**
-Descrição da solução.
+**Proposed solution**
+Description of the solution.
 
-**Alternativas consideradas**
-Outras soluções que você considerou.
+**Alternatives considered**
+Other solutions you considered.
 
-**Contexto adicional**
-Qualquer contexto adicional.
+**Additional context**
+Any additional context.
 ```
 
-## Comunidade
+## Community
 
-### Canais de Comunicação
-- **Issues**: Para bugs e feature requests
-- **Discussions**: Para discussões gerais
-- **Pull Requests**: Para contribuições
+### Communication Channels
+- **Issues**: For bugs and feature requests
+- **Discussions**: For general discussions
+- **Pull Requests**: For contributions
 
-### Código de Conduta
-- Seja respeitoso e inclusivo
-- Ajude outros desenvolvedores
-- Mantenha discussões construtivas
-- Reporte comportamentos inadequados
+### Code of Conduct
+- Be respectful and inclusive
+- Help other developers
+- Keep discussions constructive
+- Report inappropriate behavior
 
-## Agradecimentos
+## Acknowledgments
 
-Obrigado por contribuir para este projeto! Sua ajuda é muito importante para a comunidade. 
+Thank you for contributing to this project! Your help is very important to the community. 

@@ -1,88 +1,88 @@
-# Resumo do Projeto - N8N Community Node Evolution API v2
+# Project Summary - N8N Community Node Evolution API v2
 
-## 🎯 Objetivo
-Criar um community node para o N8N que seja totalmente compatível com a Evolution API v2, oferecendo uma interface completa e intuitiva para integração com WhatsApp Business.
+## 🎯 Objective
+Create a community node for N8N that is fully compatible with Evolution API v2, offering a complete and intuitive interface for WhatsApp Business integration.
 
-## 📋 Funcionalidades Implementadas
+## 📋 Implemented Features
 
-### ✅ Recursos Principais
-- **Compatibilidade Total**: Suporte completo à Evolution API v2
-- **Interface Intuitiva**: Interface amigável no N8N
-- **Operações Completas**: Todas as operações da API v2 implementadas
-- **Tratamento de Erros**: Sistema robusto de tratamento de erros
-- **Documentação Completa**: Documentação técnica e exemplos de uso
+### ✅ Main Features
+- **Full Compatibility**: Complete support for Evolution API v2
+- **Intuitive Interface**: User-friendly interface in N8N
+- **Complete Operations**: All API v2 operations implemented
+- **Error Handling**: Robust error handling system
+- **Complete Documentation**: Technical documentation and usage examples
 
-### 🔧 Operações Disponíveis
+### 🔧 Available Operations
 
-#### Instância (8 operações)
-- ✅ Criar Instância
-- ✅ Buscar Instâncias
-- ✅ Conectar Instância
-- ✅ Reiniciar Instância
-- ✅ Estado da Conexão
-- ✅ Desconectar Instância
-- ✅ Deletar Instância
-- ✅ Definir Presença
+#### Instance (8 operations)
+- ✅ Create Instance
+- ✅ Find Instances
+- ✅ Connect Instance
+- ✅ Restart Instance
+- ✅ Connection State
+- ✅ Disconnect Instance
+- ✅ Delete Instance
+- ✅ Set Presence
 
-#### Mensagem (12 operações)
-- ✅ Enviar Texto
-- ✅ Enviar Imagem
-- ✅ Enviar Vídeo
-- ✅ Enviar Áudio
-- ✅ Enviar Documento
-- ✅ Enviar Enquete
-- ✅ Enviar Contato
-- ✅ Enviar Lista
-- ✅ Enviar Botão
-- ✅ Enviar Pix
-- ✅ Enviar Status
-- ✅ Reagir a Mensagem
+#### Message (12 operations)
+- ✅ Send Text
+- ✅ Send Image
+- ✅ Send Video
+- ✅ Send Audio
+- ✅ Send Document
+- ✅ Send Poll
+- ✅ Send Contact
+- ✅ Send List
+- ✅ Send Button
+- ✅ Send PIX
+- ✅ Send Status
+- ✅ React to Message
 
-#### Grupo (13 operações)
-- ✅ Criar Grupo
-- ✅ Atualizar Imagem do Grupo
-- ✅ Atualizar Nome do Grupo
-- ✅ Atualizar Descrição do Grupo
-- ✅ Atualizar Configurações do Grupo
-- ✅ Atualizar Membros
-- ✅ Buscar Link de convite do Grupo
-- ✅ Revogar Link de convite do Grupo
-- ✅ Enviar Link de Convite do Grupo
-- ✅ Encontrar Participantes
-- ✅ Mensagens Temporárias
-- ✅ Sair do Grupo
-- ✅ Entrar no Grupo
+#### Group (13 operations)
+- ✅ Create Group
+- ✅ Update Group Image
+- ✅ Update Group Name
+- ✅ Update Group Description
+- ✅ Update Group Settings
+- ✅ Update Members
+- ✅ Fetch Group Invite Link
+- ✅ Revoke Group Invite Link
+- ✅ Send Group Invite Link
+- ✅ Find Participants
+- ✅ Temporary Messages
+- ✅ Leave Group
+- ✅ Join Group
 
-#### Chat (14 operações)
-- ✅ Verificar Número
-- ✅ Ler Mensagem
-- ✅ Gerenciar Arquivo
-- ✅ Marcar como Não lido
-- ✅ Deletar Mensagem
-- ✅ Buscar Foto de Perfil
-- ✅ Obter Mídia em Base64
-- ✅ Editar Mensagem
-- ✅ Enviar Presença
-- ✅ Bloquear Contato
-- ✅ Buscar Contatos
-- ✅ Procurar Mensagens
-- ✅ Procurar Status
-- ✅ Procurar Chats
+#### Chat (14 operations)
+- ✅ Check Number
+- ✅ Read Message
+- ✅ Manage File
+- ✅ Mark as Unread
+- ✅ Delete Message
+- ✅ Fetch Profile Picture
+- ✅ Get Media in Base64
+- ✅ Edit Message
+- ✅ Send Presence
+- ✅ Block Contact
+- ✅ Find Contacts
+- ✅ Search Messages
+- ✅ Search Status
+- ✅ Search Chats
 
-#### Evento (2 operações)
+#### Event (2 operations)
 - ✅ Webhook
 - ✅ RabbitMQ
 
-#### Integração (5 operações)
+#### Integration (5 operations)
 - ✅ Chatwoot
 - ✅ Evolution Bot
 - ✅ Typebot
 - ✅ Dify
 - ✅ Flowise
 
-## 🏗️ Arquitetura do Projeto
+## 🏗️ Project Architecture
 
-### Estrutura de Arquivos
+### File Structure
 ```
 n8n-nodes-evolution-api-v2/
 ├── credentials/
@@ -109,182 +109,182 @@ n8n-nodes-evolution-api-v2/
 └── PROJECT_SUMMARY.md
 ```
 
-### Tecnologias Utilizadas
-- **TypeScript**: Linguagem principal
-- **N8N Workflow**: Framework do N8N
+### Technologies Used
+- **TypeScript**: Main language
+- **N8N Workflow**: N8N framework
 - **Gulp**: Build automation
-- **ESLint**: Linting de código
-- **Prettier**: Formatação de código
+- **ESLint**: Code linting
+- **Prettier**: Code formatting
 
-## 📊 Estatísticas do Projeto
+## 📊 Project Statistics
 
-### Código
-- **Linhas de Código**: ~800 linhas
-- **Arquivos TypeScript**: 3 arquivos
-- **Operações Implementadas**: 54 operações
-- **Recursos**: 6 recursos principais
+### Code
+- **Lines of Code**: ~800 lines
+- **TypeScript Files**: 3 files
+- **Implemented Operations**: 54 operations
+- **Resources**: 6 main resources
 
-### Documentação
-- **Arquivos de Documentação**: 5 arquivos
-- **Exemplos de Uso**: 15+ exemplos
-- **Guias Técnicos**: Documentação completa
-- **Templates**: Templates para issues e PRs
+### Documentation
+- **Documentation Files**: 5 files
+- **Usage Examples**: 15+ examples
+- **Technical Guides**: Complete documentation
+- **Templates**: Templates for issues and PRs
 
-## 🚀 Como Usar
+## 🚀 How to Use
 
-### 1. Instalação
+### 1. Installation
 ```bash
-# Clone o repositório
+# Clone the repository
 git clone https://github.com/yourusername/n8n-nodes-evolution-api-v2.git
 
-# Entre no diretório
+# Enter the directory
 cd n8n-nodes-evolution-api-v2
 
-# Execute o script de instalação
+# Run the installation script
 ./install.sh
 ```
 
-### 2. Configuração
-1. Configure as credenciais da Evolution API
-2. Copie a pasta `dist` para o diretório de community nodes do N8N
-3. Reinicie o N8N
-4. Comece a usar!
+### 2. Configuration
+1. Configure Evolution API credentials
+2. Copy the `dist` folder to N8N's community nodes directory
+3. Restart N8N
+4. Start using!
 
-### 3. Exemplo Básico
+### 3. Basic Example
 ```json
 {
   "resource": "message",
   "operation": "sendText",
-  "instanceName": "minha-instancia",
+  "instanceName": "my-instance",
   "number": "5511999999999",
-  "messageText": "Olá! Esta é uma mensagem de teste."
+  "messageText": "Hello! This is a test message."
 }
 ```
 
-## 🔧 Desenvolvimento
+## 🔧 Development
 
-### Comandos Disponíveis
+### Available Commands
 ```bash
-# Instalar dependências
+# Install dependencies
 npm install
 
-# Modo de desenvolvimento
+# Development mode
 npm run dev
 
-# Build do projeto
+# Build project
 npm run build
 
 # Linting
 npm run lint
 
-# Formatação
+# Formatting
 npm run format
 ```
 
-### Estrutura de Desenvolvimento
-- **Modular**: Cada operação é independente
-- **Extensível**: Fácil adicionar novas operações
-- **Testável**: Estrutura preparada para testes
-- **Documentado**: Código bem documentado
+### Development Structure
+- **Modular**: Each operation is independent
+- **Extensible**: Easy to add new operations
+- **Testable**: Structure prepared for testing
+- **Documented**: Well-documented code
 
-## 📈 Vantagens sobre a v1
+## 📈 Advantages over v1
 
-### Melhorias Implementadas
-1. **Compatibilidade v2**: Suporte completo à nova API
-2. **Interface Melhorada**: Interface mais intuitiva
-3. **Mais Operações**: 54 vs ~30 operações
-4. **Melhor Documentação**: Documentação técnica completa
-5. **Tratamento de Erros**: Sistema robusto de erros
-6. **Exemplos Práticos**: 15+ exemplos de uso
-7. **Configuração Simplificada**: Setup mais fácil
-8. **Suporte a Integrações**: Integrações com IA
+### Implemented Improvements
+1. **v2 Compatibility**: Complete support for new API
+2. **Improved Interface**: More intuitive interface
+3. **More Operations**: 54 vs ~30 operations
+4. **Better Documentation**: Complete technical documentation
+5. **Error Handling**: Robust error system
+6. **Practical Examples**: 15+ usage examples
+7. **Simplified Configuration**: Easier setup
+8. **Integration Support**: AI integrations
 
-### Novas Funcionalidades
-- ✅ Suporte a PIX
-- ✅ Mensagens temporárias
-- ✅ Integrações com IA (Dify, Flowise)
-- ✅ Webhooks avançados
+### New Features
+- ✅ PIX support
+- ✅ Temporary messages
+- ✅ AI integrations (Dify, Flowise)
+- ✅ Advanced webhooks
 - ✅ RabbitMQ
 - ✅ Chatwoot
 - ✅ Typebot
 - ✅ Evolution Bot
 
-## 🎯 Casos de Uso
+## 🎯 Use Cases
 
-### 1. Automação de Atendimento
-- Receber mensagens via webhook
-- Processar com IA
-- Responder automaticamente
-- Integrar com CRM
+### 1. Customer Service Automation
+- Receive messages via webhook
+- Process with AI
+- Respond automatically
+- Integrate with CRM
 
-### 2. Broadcast de Marketing
-- Enviar mensagens em massa
-- Personalizar conteúdo
-- Agendar envios
-- Acompanhar métricas
+### 2. Marketing Broadcast
+- Send mass messages
+- Personalize content
+- Schedule sending
+- Track metrics
 
-### 3. Gerenciamento de Grupos
-- Criar grupos automaticamente
-- Gerenciar membros
-- Enviar anúncios
-- Monitorar atividades
+### 3. Group Management
+- Create groups automatically
+- Manage members
+- Send announcements
+- Monitor activities
 
-### 4. Integração com Sistemas
-- Conectar com CRMs
-- Integrar com ERPs
-- Conectar com plataformas de IA
-- Sincronizar dados
+### 4. System Integration
+- Connect with CRMs
+- Integrate with ERPs
+- Connect with AI platforms
+- Synchronize data
 
 ## 🔮 Roadmap
 
-### Próximas Versões
-1. **v1.1.0**: Suporte a múltiplas instâncias
-2. **v1.2.0**: Templates de mensagem
-3. **v1.3.0**: Scheduler de mensagens
-4. **v1.4.0**: Analytics e relatórios
-5. **v1.5.0**: Webhook filters avançados
+### Next Versions
+1. **v1.1.0**: Multi-instance support
+2. **v1.2.0**: Message templates
+3. **v1.3.0**: Message scheduler
+4. **v1.4.0**: Analytics and reports
+5. **v1.5.0**: Advanced webhook filters
 
-### Melhorias Planejadas
-- Cache inteligente
-- Retry logic automático
+### Planned Improvements
+- Smart cache
+- Automatic retry logic
 - Bulk operations
 - Real-time updates
 - Advanced error handling
 
-## 🤝 Contribuição
+## 🤝 Contributing
 
-### Como Contribuir
-1. Fork o repositório
-2. Crie uma branch para sua feature
-3. Faça suas alterações
-4. Execute os testes
-5. Abra um Pull Request
+### How to Contribute
+1. Fork the repository
+2. Create a branch for your feature
+3. Make your changes
+4. Run tests
+5. Open a Pull Request
 
-### Padrões
+### Standards
 - TypeScript strict mode
 - ESLint + Prettier
-- Documentação atualizada
-- Testes para novas funcionalidades
+- Updated documentation
+- Tests for new features
 
-## 📞 Suporte
+## 📞 Support
 
-### Canais de Ajuda
-- **Issues**: Para bugs e problemas
-- **Discussions**: Para dúvidas gerais
-- **Documentação**: README e exemplos
-- **Comunidade**: Contribuições da comunidade
+### Help Channels
+- **Issues**: For bugs and problems
+- **Discussions**: For general questions
+- **Documentation**: README and examples
+- **Community**: Community contributions
 
-## 🏆 Conclusão
+## 🏆 Conclusion
 
-Este community node representa uma solução completa e moderna para integração com a Evolution API v2 no N8N. Com 54 operações implementadas, documentação completa e interface intuitiva, oferece tudo que é necessário para criar automações robustas com WhatsApp Business.
+This community node represents a complete and modern solution for Evolution API v2 integration in N8N. With 54 implemented operations, complete documentation and intuitive interface, it offers everything needed to create robust automations with WhatsApp Business.
 
-### Principais Diferenciais
-- ✅ **Compatibilidade Total** com Evolution API v2
-- ✅ **Interface Intuitiva** no N8N
-- ✅ **Operações Completas** (54 operações)
-- ✅ **Documentação Abrangente**
-- ✅ **Exemplos Práticos**
-- ✅ **Fácil Instalação**
-- ✅ **Suporte à Comunidade**
+### Main Differentials
+- ✅ **Full Compatibility** with Evolution API v2
+- ✅ **Intuitive Interface** in N8N
+- ✅ **Complete Operations** (54 operations)
+- ✅ **Comprehensive Documentation**
+- ✅ **Practical Examples**
+- ✅ **Easy Installation**
+- ✅ **Community Support**
 
-O projeto está pronto para uso em produção e pode ser facilmente estendido com novas funcionalidades conforme necessário. 
+The project is ready for production use and can be easily extended with new features as needed. 

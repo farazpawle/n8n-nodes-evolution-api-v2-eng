@@ -14,7 +14,7 @@ export class EvolutionApi implements INodeType {
         group: ['transform'],
         version: 2,
         subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-        description: 'Interagir com a Evolution API v2',
+        description: 'Interact with Evolution API v2',
         defaults: {
             name: 'Evolution API',
         },
@@ -35,15 +35,15 @@ export class EvolutionApi implements INodeType {
                 noDataExpression: true,
                 options: [
                     {
-                        name: 'Instância',
+                        name: 'Instance',
                         value: 'instance',
                     },
                     {
-                        name: 'Mensagem',
+                        name: 'Message',
                         value: 'message',
                     },
                     {
-                        name: 'Grupo',
+                        name: 'Group',
                         value: 'group',
                     },
                     {
@@ -51,11 +51,11 @@ export class EvolutionApi implements INodeType {
                         value: 'chat',
                     },
                     {
-                        name: 'Evento',
+                        name: 'Event',
                         value: 'event',
                     },
                     {
-                        name: 'Integração',
+                        name: 'Integration',
                         value: 'integration',
                     },
                 ],
@@ -74,52 +74,52 @@ export class EvolutionApi implements INodeType {
                 },
                 options: [
                     {
-                        name: 'Criar Instância',
+                        name: 'Create Instance',
                         value: 'createInstance',
-                        description: 'Criar uma nova instância',
-                        action: 'Criar uma nova instância',
+                        description: 'Create a new instance',
+                        action: 'Create a new instance',
                     },
                     {
-                        name: 'Buscar Instâncias',
+                        name: 'Fetch Instances',
                         value: 'fetchInstances',
-                        description: 'Buscar todas as instâncias',
-                        action: 'Buscar todas as instâncias',
+                        description: 'Fetch all instances',
+                        action: 'Fetch all instances',
                     },
                     {
-                        name: 'Conectar Instância',
+                        name: 'Connect Instance',
                         value: 'connectInstance',
-                        description: 'Conectar a uma instância',
-                        action: 'Conectar a uma instância',
+                        description: 'Connect to an instance',
+                        action: 'Connect to an instance',
                     },
                     {
-                        name: 'Reiniciar Instância',
+                        name: 'Restart Instance',
                         value: 'restartInstance',
-                        description: 'Reiniciar uma instância',
-                        action: 'Reiniciar uma instância',
+                        description: 'Restart an instance',
+                        action: 'Restart an instance',
                     },
                     {
-                        name: 'Estado da Conexão',
+                        name: 'Connection State',
                         value: 'connectionState',
-                        description: 'Verificar estado da conexão',
-                        action: 'Verificar estado da conexão',
+                        description: 'Check connection state',
+                        action: 'Check connection state',
                     },
                     {
-                        name: 'Desconectar Instância',
+                        name: 'Disconnect Instance',
                         value: 'logoutInstance',
-                        description: 'Desconectar uma instância',
-                        action: 'Desconectar uma instância',
+                        description: 'Disconnect an instance',
+                        action: 'Disconnect an instance',
                     },
                     {
-                        name: 'Deletar Instância',
+                        name: 'Delete Instance',
                         value: 'deleteInstance',
-                        description: 'Deletar uma instância',
-                        action: 'Deletar uma instância',
+                        description: 'Delete an instance',
+                        action: 'Delete an instance',
                     },
                     {
-                        name: 'Definir Presença',
+                        name: 'Set Presence',
                         value: 'setPresence',
-                        description: 'Definir presença da instância',
-                        action: 'Definir presença da instância',
+                        description: 'Set instance presence',
+                        action: 'Set instance presence',
                     },
                 ],
                 default: 'createInstance',
@@ -137,76 +137,76 @@ export class EvolutionApi implements INodeType {
                 },
                 options: [
                     {
-                        name: 'Enviar Texto',
+                        name: 'Send Text',
                         value: 'sendText',
-                        description: 'Enviar mensagem de texto',
-                        action: 'Enviar mensagem de texto',
+                        description: 'Send text message',
+                        action: 'Send text message',
                     },
                     {
-                        name: 'Enviar Imagem',
+                        name: 'Send Image',
                         value: 'sendImage',
-                        description: 'Enviar imagem',
-                        action: 'Enviar imagem',
+                        description: 'Send image',
+                        action: 'Send image',
                     },
                     {
-                        name: 'Enviar Vídeo',
+                        name: 'Send Video',
                         value: 'sendVideo',
-                        description: 'Enviar vídeo',
-                        action: 'Enviar vídeo',
+                        description: 'Send video',
+                        action: 'Send video',
                     },
                     {
-                        name: 'Enviar Áudio',
+                        name: 'Send Audio',
                         value: 'sendAudio',
-                        description: 'Enviar áudio',
-                        action: 'Enviar áudio',
+                        description: 'Send audio',
+                        action: 'Send audio',
                     },
                     {
-                        name: 'Enviar Documento',
+                        name: 'Send Document',
                         value: 'sendDocument',
-                        description: 'Enviar documento',
-                        action: 'Enviar documento',
+                        description: 'Send document',
+                        action: 'Send document',
                     },
                     {
-                        name: 'Enviar Enquete',
+                        name: 'Send Poll',
                         value: 'sendPoll',
-                        description: 'Enviar enquete',
-                        action: 'Enviar enquete',
+                        description: 'Send poll',
+                        action: 'Send poll',
                     },
                     {
-                        name: 'Enviar Contato',
+                        name: 'Send Contact',
                         value: 'sendContact',
-                        description: 'Enviar contato',
-                        action: 'Enviar contato',
+                        description: 'Send contact',
+                        action: 'Send contact',
                     },
                     {
-                        name: 'Enviar Lista',
+                        name: 'Send List',
                         value: 'sendList',
-                        description: 'Enviar lista',
-                        action: 'Enviar lista',
+                        description: 'Send list',
+                        action: 'Send list',
                     },
                     {
-                        name: 'Enviar Botão',
+                        name: 'Send Button',
                         value: 'sendButton',
-                        description: 'Enviar botão',
-                        action: 'Enviar botão',
+                        description: 'Send button',
+                        action: 'Send button',
                     },
                     {
-                        name: 'Enviar Pix',
+                        name: 'Send PIX',
                         value: 'sendPix',
-                        description: 'Enviar PIX',
-                        action: 'Enviar PIX',
+                        description: 'Send PIX',
+                        action: 'Send PIX',
                     },
                     {
-                        name: 'Enviar Status',
+                        name: 'Send Status',
                         value: 'sendStatus',
-                        description: 'Enviar status',
-                        action: 'Enviar status',
+                        description: 'Send status',
+                        action: 'Send status',
                     },
                     {
-                        name: 'Reagir a Mensagem',
+                        name: 'React to Message',
                         value: 'sendReaction',
-                        description: 'Reagir a uma mensagem',
-                        action: 'Reagir a uma mensagem',
+                        description: 'React to a message',
+                        action: 'React to a message',
                     },
                 ],
                 default: 'sendText',
@@ -224,76 +224,76 @@ export class EvolutionApi implements INodeType {
                 },
                 options: [
                     {
-                        name: 'Criar Grupo',
+                        name: 'Create Group',
                         value: 'createGroup',
-                        description: 'Criar um novo grupo',
-                        action: 'Criar um novo grupo',
+                        description: 'Create a new group',
+                        action: 'Create a new group',
                     },
                     {
-                        name: 'Atualizar Imagem do Grupo',
+                        name: 'Update Group Picture',
                         value: 'updateGroupPicture',
-                        description: 'Atualizar imagem do grupo',
-                        action: 'Atualizar imagem do grupo',
+                        description: 'Update group picture',
+                        action: 'Update group picture',
                     },
                     {
-                        name: 'Atualizar Nome do Grupo',
+                        name: 'Update Group Name',
                         value: 'updateGroupSubject',
-                        description: 'Atualizar nome do grupo',
-                        action: 'Atualizar nome do grupo',
+                        description: 'Update group name',
+                        action: 'Update group name',
                     },
                     {
-                        name: 'Atualizar Descrição do Grupo',
+                        name: 'Update Group Description',
                         value: 'updateGroupDescription',
-                        description: 'Atualizar descrição do grupo',
-                        action: 'Atualizar descrição do grupo',
+                        description: 'Update group description',
+                        action: 'Update group description',
                     },
                     {
-                        name: 'Atualizar Configurações do Grupo',
+                        name: 'Update Group Settings',
                         value: 'updateGroupSetting',
-                        description: 'Atualizar configurações do grupo',
-                        action: 'Atualizar configurações do grupo',
+                        description: 'Update group settings',
+                        action: 'Update group settings',
                     },
                     {
-                        name: 'Atualizar Membros',
+                        name: 'Update Members',
                         value: 'updateGroupMembers',
-                        description: 'Atualizar membros do grupo',
-                        action: 'Atualizar membros do grupo',
+                        description: 'Update group members',
+                        action: 'Update group members',
                     },
                     {
-                        name: 'Buscar Link de convite do Grupo',
+                        name: 'Fetch Group Invite Link',
                         value: 'fetchInviteCode',
-                        description: 'Buscar link de convite do grupo',
-                        action: 'Buscar link de convite do grupo',
+                        description: 'Fetch group invite link',
+                        action: 'Fetch group invite link',
                     },
                     {
-                        name: 'Revogar Link de convite do Grupo',
+                        name: 'Revoke Group Invite Link',
                         value: 'revokeInviteCode',
-                        description: 'Revogar link de convite do grupo',
-                        action: 'Revogar link de convite do grupo',
+                        description: 'Revoke group invite link',
+                        action: 'Revoke group invite link',
                     },
                     {
-                        name: 'Enviar Link de Convite do Grupo',
+                        name: 'Send Group Invite Link',
                         value: 'sendGroupInvite',
-                        description: 'Enviar link de convite do grupo',
-                        action: 'Enviar link de convite do grupo',
+                        description: 'Send group invite link',
+                        action: 'Send group invite link',
                     },
                     {
-                        name: 'Encontrar Participantes',
+                        name: 'Find Participants',
                         value: 'findGroupMembers',
-                        description: 'Encontrar participantes do grupo',
-                        action: 'Encontrar participantes do grupo',
+                        description: 'Find group participants',
+                        action: 'Find group participants',
                     },
                     {
-                        name: 'Mensagens Temporárias',
+                        name: 'Temporary Messages',
                         value: 'toggleEphemeral',
-                        description: 'Alternar mensagens temporárias',
-                        action: 'Alternar mensagens temporárias',
+                        description: 'Toggle temporary messages',
+                        action: 'Toggle temporary messages',
                     },
                     {
-                        name: 'Sair do Grupo',
+                        name: 'Leave Group',
                         value: 'leaveGroup',
-                        description: 'Sair do grupo',
-                        action: 'Sair do grupo',
+                        description: 'Leave group',
+                        action: 'Leave group',
                     },
                 ],
                 default: 'createGroup',
@@ -311,88 +311,88 @@ export class EvolutionApi implements INodeType {
                 },
                 options: [
                     {
-                        name: 'Verificar Número',
+                        name: 'Check Number',
                         value: 'checkIsWhatsApp',
-                        description: 'Verificar se número é WhatsApp',
-                        action: 'Verificar se número é WhatsApp',
+                        description: 'Check if number is WhatsApp',
+                        action: 'Check if number is WhatsApp',
                     },
                     {
-                        name: 'Ler Mensagem',
+                        name: 'Read Message',
                         value: 'markMessageAsRead',
-                        description: 'Marcar mensagem como lida',
-                        action: 'Marcar mensagem como lida',
+                        description: 'Mark message as read',
+                        action: 'Mark message as read',
                     },
                     {
-                        name: 'Gerenciar Arquivo',
+                        name: 'Archive Chat',
                         value: 'archiveChat',
-                        description: 'Arquivar chat',
-                        action: 'Arquivar chat',
+                        description: 'Archive chat',
+                        action: 'Archive chat',
                     },
                     {
-                        name: 'Marcar como Não lido',
+                        name: 'Mark as Unread',
                         value: 'markMessageAsUnread',
-                        description: 'Marcar mensagem como não lida',
-                        action: 'Marcar mensagem como não lida',
+                        description: 'Mark message as unread',
+                        action: 'Mark message as unread',
                     },
                     {
-                        name: 'Deletar Mensagem',
+                        name: 'Delete Message',
                         value: 'deleteMessage',
-                        description: 'Deletar mensagem para todos',
-                        action: 'Deletar mensagem para todos',
+                        description: 'Delete message for everyone',
+                        action: 'Delete message for everyone',
                     },
                     {
-                        name: 'Buscar Foto de Perfil',
+                        name: 'Fetch Profile Picture',
                         value: 'fetchProfilePictureUrl',
-                        description: 'Buscar foto de perfil',
-                        action: 'Buscar foto de perfil',
+                        description: 'Fetch profile picture',
+                        action: 'Fetch profile picture',
                     },
                     {
-                        name: 'Obter Mídia em Base64',
+                        name: 'Get Media in Base64',
                         value: 'getBase64',
-                        description: 'Obter mídia em base64',
-                        action: 'Obter mídia em base64',
+                        description: 'Get media in base64',
+                        action: 'Get media in base64',
                     },
                     {
-                        name: 'Editar Mensagem',
+                        name: 'Edit Message',
                         value: 'updateMessage',
-                        description: 'Editar mensagem',
-                        action: 'Editar mensagem',
+                        description: 'Edit message',
+                        action: 'Edit message',
                     },
                     {
-                        name: 'Enviar Presença',
+                        name: 'Send Presence',
                         value: 'sendPresence',
-                        description: 'Enviar presença',
-                        action: 'Enviar presença',
+                        description: 'Send presence',
+                        action: 'Send presence',
                     },
                     {
-                        name: 'Bloquear Contato',
+                        name: 'Block Contact',
                         value: 'updateBlockStatus',
-                        description: 'Atualizar status de bloqueio',
-                        action: 'Atualizar status de bloqueio',
+                        description: 'Update block status',
+                        action: 'Update block status',
                     },
                     {
-                        name: 'Buscar Contatos',
+                        name: 'Find Contacts',
                         value: 'findContacts',
-                        description: 'Buscar contatos',
-                        action: 'Buscar contatos',
+                        description: 'Find contacts',
+                        action: 'Find contacts',
                     },
                     {
-                        name: 'Procurar Mensagens',
+                        name: 'Search Messages',
                         value: 'findMessages',
-                        description: 'Procurar mensagens',
-                        action: 'Procurar mensagens',
+                        description: 'Search messages',
+                        action: 'Search messages',
                     },
                     {
-                        name: 'Procurar Status',
+                        name: 'Search Status',
                         value: 'findStatusMessage',
-                        description: 'Procurar mensagens de status',
-                        action: 'Procurar mensagens de status',
+                        description: 'Search status messages',
+                        action: 'Search status messages',
                     },
                     {
-                        name: 'Procurar Chats',
+                        name: 'Search Chats',
                         value: 'findChats',
-                        description: 'Procurar chats',
-                        action: 'Procurar chats',
+                        description: 'Search chats',
+                        action: 'Search chats',
                     },
                 ],
                 default: 'checkIsWhatsApp',
@@ -412,14 +412,14 @@ export class EvolutionApi implements INodeType {
                     {
                         name: 'Webhook',
                         value: 'webhook',
-                        description: 'Configurar webhook',
-                        action: 'Configurar webhook',
+                        description: 'Configure webhook',
+                        action: 'Configure webhook',
                     },
                     {
                         name: 'RabbitMQ',
                         value: 'rabbitmq',
-                        description: 'Configurar RabbitMQ',
-                        action: 'Configurar RabbitMQ',
+                        description: 'Configure RabbitMQ',
+                        action: 'Configure RabbitMQ',
                     },
                 ],
                 default: 'webhook',
@@ -439,32 +439,32 @@ export class EvolutionApi implements INodeType {
                     {
                         name: 'Chatwoot',
                         value: 'chatwoot',
-                        description: 'Configurar Chatwoot',
-                        action: 'Configurar Chatwoot',
+                        description: 'Configure Chatwoot',
+                        action: 'Configure Chatwoot',
                     },
                     {
                         name: 'Evolution Bot',
                         value: 'evolutionBot',
-                        description: 'Configurar Evolution Bot',
-                        action: 'Configurar Evolution Bot',
+                        description: 'Configure Evolution Bot',
+                        action: 'Configure Evolution Bot',
                     },
                     {
                         name: 'Typebot',
                         value: 'typebot',
-                        description: 'Configurar Typebot',
-                        action: 'Configurar Typebot',
+                        description: 'Configure Typebot',
+                        action: 'Configure Typebot',
                     },
                     {
                         name: 'Dify',
                         value: 'dify',
-                        description: 'Configurar Dify',
-                        action: 'Configurar Dify',
+                        description: 'Configure Dify',
+                        action: 'Configure Dify',
                     },
                     {
                         name: 'Flowise',
                         value: 'flowise',
-                        description: 'Configurar Flowise',
-                        action: 'Configurar Flowise',
+                        description: 'Configure Flowise',
+                        action: 'Configure Flowise',
                     },
                 ],
                 default: 'chatwoot',
@@ -475,7 +475,7 @@ export class EvolutionApi implements INodeType {
                 name: 'instanceName',
                 type: 'string',
                 default: '',
-                description: 'Nome da instância',
+                description: 'Instance name',
                 required: true,
                 displayOptions: {
                     show: {
@@ -489,7 +489,7 @@ export class EvolutionApi implements INodeType {
                 name: 'instanceData',
                 type: 'json',
                 default: '{}',
-                description: 'Dados da instância (JSON)',
+                description: 'Instance data (JSON)',
                 displayOptions: {
                     show: {
                         resource: ['instance'],
@@ -503,7 +503,7 @@ export class EvolutionApi implements INodeType {
                 name: 'number',
                 type: 'string',
                 default: '',
-                description: 'Número do destinatário',
+                description: 'Recipient number',
                 required: true,
                 displayOptions: {
                     show: {
@@ -516,7 +516,7 @@ export class EvolutionApi implements INodeType {
                 name: 'messageText',
                 type: 'string',
                 default: '',
-                description: 'Texto da mensagem',
+                description: 'Message text',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -529,7 +529,7 @@ export class EvolutionApi implements INodeType {
                 name: 'imageUrl',
                 type: 'string',
                 default: '',
-                description: 'URL da imagem',
+                description: 'Image URL',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -542,7 +542,7 @@ export class EvolutionApi implements INodeType {
                 name: 'caption',
                 type: 'string',
                 default: '',
-                description: 'Legenda da imagem',
+                description: 'Image caption',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -555,7 +555,7 @@ export class EvolutionApi implements INodeType {
                 name: 'videoUrl',
                 type: 'string',
                 default: '',
-                description: 'URL do vídeo',
+                description: 'Video URL',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -568,7 +568,7 @@ export class EvolutionApi implements INodeType {
                 name: 'audioUrl',
                 type: 'string',
                 default: '',
-                description: 'URL do áudio',
+                description: 'Audio URL',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -581,7 +581,7 @@ export class EvolutionApi implements INodeType {
                 name: 'documentUrl',
                 type: 'string',
                 default: '',
-                description: 'URL do documento',
+                description: 'Document URL',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -594,7 +594,7 @@ export class EvolutionApi implements INodeType {
                 name: 'documentName',
                 type: 'string',
                 default: '',
-                description: 'Nome do documento',
+                description: 'Document name',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -608,7 +608,7 @@ export class EvolutionApi implements INodeType {
                 name: 'listTitle',
                 type: 'string',
                 default: '',
-                description: 'Título da lista',
+                description: 'List title',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -621,7 +621,7 @@ export class EvolutionApi implements INodeType {
                 name: 'listDescription',
                 type: 'string',
                 default: '',
-                description: 'Descrição da lista',
+                description: 'List description',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -633,8 +633,8 @@ export class EvolutionApi implements INodeType {
                 displayName: 'List Button Text',
                 name: 'listButtonText',
                 type: 'string',
-                default: 'Ver opções',
-                description: 'Texto do botão da lista',
+                default: 'View options',
+                description: 'List button text',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -647,7 +647,7 @@ export class EvolutionApi implements INodeType {
                 name: 'listFooterText',
                 type: 'string',
                 default: '',
-                description: 'Texto do rodapé da lista',
+                description: 'List footer text',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -663,7 +663,7 @@ export class EvolutionApi implements INodeType {
                     multipleValues: true,
                 },
                 default: {},
-                description: 'Seções da lista',
+                description: 'List sections',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -680,7 +680,7 @@ export class EvolutionApi implements INodeType {
                                 name: 'title',
                                 type: 'string',
                                 default: '',
-                                description: 'Título da seção',
+                                description: 'Section title',
                             },
                             {
                                 displayName: 'Rows',
@@ -690,7 +690,7 @@ export class EvolutionApi implements INodeType {
                                     multipleValues: true,
                                 },
                                 default: {},
-                                description: 'Linhas da seção',
+                                description: 'Section rows',
                                 options: [
                                     {
                                         displayName: 'Row',
@@ -701,21 +701,21 @@ export class EvolutionApi implements INodeType {
                                                 name: 'title',
                                                 type: 'string',
                                                 default: '',
-                                                description: 'Título da linha',
+                                                description: 'Row title',
                                             },
                                             {
                                                 displayName: 'Description',
                                                 name: 'description',
                                                 type: 'string',
                                                 default: '',
-                                                description: 'Descrição da linha',
+                                                description: 'Row description',
                                             },
                                             {
                                                 displayName: 'Row ID',
                                                 name: 'rowId',
                                                 type: 'string',
                                                 default: '',
-                                                description: 'ID da linha',
+                                                description: 'Row ID',
                                             },
                                         ],
                                     },
@@ -731,7 +731,7 @@ export class EvolutionApi implements INodeType {
                 name: 'buttonTitle',
                 type: 'string',
                 default: '',
-                description: 'Título dos botões',
+                description: 'Button title',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -744,7 +744,7 @@ export class EvolutionApi implements INodeType {
                 name: 'buttonDescription',
                 type: 'string',
                 default: '',
-                description: 'Descrição dos botões',
+                description: 'Button description',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -760,7 +760,7 @@ export class EvolutionApi implements INodeType {
                     multipleValues: true,
                 },
                 default: {},
-                description: 'Botões',
+                description: 'Buttons',
                 displayOptions: {
                     show: {
                         resource: ['message'],
@@ -777,14 +777,14 @@ export class EvolutionApi implements INodeType {
                                 name: 'buttonText',
                                 type: 'string',
                                 default: '',
-                                description: 'Texto do botão',
+                                description: 'Button text',
                             },
                             {
                                 displayName: 'Button ID',
                                 name: 'buttonId',
                                 type: 'string',
                                 default: '',
-                                description: 'ID do botão',
+                                description: 'Button ID',
                             },
                             {
                                 displayName: 'Button Type',
@@ -794,16 +794,16 @@ export class EvolutionApi implements INodeType {
                                     {
                                         name: 'Reply',
                                         value: 'reply',
-                                        description: 'Botão de resposta',
+                                        description: 'Reply button',
                                     },
                                     {
                                         name: 'URL',
                                         value: 'url',
-                                        description: 'Botão com URL',
+                                        description: 'URL button',
                                     },
                                 ],
                                 default: 'reply',
-                                description: 'Tipo do botão',
+                                description: 'Button type',
                             },
                         ],
                     },
@@ -815,7 +815,7 @@ export class EvolutionApi implements INodeType {
                 name: 'groupId',
                 type: 'string',
                 default: '',
-                description: 'ID do grupo',
+                description: 'Group ID',
                 required: true,
                 displayOptions: {
                     show: {
@@ -977,7 +977,7 @@ export class EvolutionApi implements INodeType {
                         const listFooterText = this.getNodeParameter('listFooterText', i) as string;
                         const listSections = this.getNodeParameter('listSections', i) as any;
 
-                        // Processar seções da lista
+                        // Process list sections
                         const sections = [];
                         if (listSections.section) {
                             for (const section of listSections.section) {
@@ -1024,7 +1024,7 @@ export class EvolutionApi implements INodeType {
                         const buttonDescription = this.getNodeParameter('buttonDescription', i) as string;
                         const buttons = this.getNodeParameter('buttons', i) as any;
 
-                        // Processar botões
+                        // Process buttons
                         const processedButtons = [];
                         if (buttons.button) {
                             for (const button of buttons.button) {
@@ -1047,7 +1047,7 @@ export class EvolutionApi implements INodeType {
                             },
                         });
                     }
-                    // Adicione mais operações de mensagem conforme necessário
+                    // Add more message operations as needed
                 } else if (resource === 'group') {
                     const instanceName = this.getNodeParameter('instanceName', i) as string;
                     const groupId = this.getNodeParameter('groupId', i) as string;
@@ -1070,7 +1070,7 @@ export class EvolutionApi implements INodeType {
                             uri: `/group/findGroupMembers/${instanceName}/${groupId}`,
                         });
                     }
-                    // Adicione mais operações de grupo conforme necessário
+                    // Add more group operations as needed
                 } else if (resource === 'chat') {
                     const instanceName = this.getNodeParameter('instanceName', i) as string;
 
@@ -1083,7 +1083,7 @@ export class EvolutionApi implements INodeType {
                             body: { number },
                         });
                     }
-                    // Adicione mais operações de chat conforme necessário
+                    // Add more chat operations as needed
                 } else if (resource === 'event') {
                     const instanceName = this.getNodeParameter('instanceName', i) as string;
 
@@ -1100,7 +1100,7 @@ export class EvolutionApi implements INodeType {
                             },
                         });
                     }
-                    // Adicione mais operações de evento conforme necessário
+                    // Add more event operations as needed
                 } else if (resource === 'integration') {
                     const instanceName = this.getNodeParameter('instanceName', i) as string;
 
@@ -1117,13 +1117,13 @@ export class EvolutionApi implements INodeType {
                             },
                         });
                     }
-                    // Adicione mais operações de integração conforme necessário
+                    // Add more integration operations as needed
                 }
 
-                // Processar a resposta para garantir dados válidos
+                // Process the response to ensure valid data
                 let processedResponse: IDataObject;
                 
-                // Se a resposta for undefined ou null, criar objeto vazio
+                // If the response is undefined or null, create empty object
                 if (responseData === undefined || responseData === null) {
                     processedResponse = { 
                         success: true, 
@@ -1131,7 +1131,7 @@ export class EvolutionApi implements INodeType {
                         timestamp: new Date().toISOString()
                     };
                 }
-                // Se a resposta for uma string, tentar fazer parse
+                // If the response is a string, try to parse it
                 else if (typeof responseData === 'string') {
                     try {
                         processedResponse = JSON.parse(responseData);
@@ -1143,7 +1143,7 @@ export class EvolutionApi implements INodeType {
                         };
                     }
                 }
-                // Se a resposta for um array, processar cada item
+                // If the response is an array, process each item
                 else if (Array.isArray(responseData)) {
                     const processedArray: IDataObject[] = [];
                     for (const item of responseData) {
@@ -1164,7 +1164,7 @@ export class EvolutionApi implements INodeType {
                         timestamp: new Date().toISOString()
                     };
                 }
-                // Se for um objeto, usar diretamente
+                // If it's an object, use directly
                 else {
                     processedResponse = {
                         ...responseData,
