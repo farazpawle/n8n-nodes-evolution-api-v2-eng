@@ -9,14 +9,14 @@
 		"api-v2"
 	],
 	"license": "MIT",
-	"homepage": "https://github.com/farazpawle/n8n-nodes-evolution-api-v2",
+	"homepage": "https://github.com/farazpawle/n8n-nodes-evolution-api-v2-eng",
 	"author": {
 		"name": "Faraz Pawle",
 		"email": "farazkhld@gmail.com"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/farazpawle/n8n-nodes-evolution-api-v2.git"
+		"url": "git+https://github.com/farazpawle/n8n-nodes-evolution-api-v2-eng.git"
 	},
 	"main": "index.js",
 	"scripts": {

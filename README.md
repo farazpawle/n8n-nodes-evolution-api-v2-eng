@@ -74,8 +74,8 @@ npm install n8n-nodes-evolution-api-v2-eng
 ### Local Installation
 
 ```bash
-git clone https://github.com/farazpawle/n8n-nodes-evolution-api-v2.git
-cd n8n-nodes-evolution-api-v2
+git clone https://github.com/farazpawle/n8n-nodes-evolution-api-v2-eng.git
+cd n8n-nodes-evolution-api-v2-eng
 npm install
 ```
 
@@ -158,12 +158,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📈 Versioning
 
-This project uses [SemVer](http://semver.org/) for versioning. To see available versions, check the [tags in this repository](https://github.com/farazpawle/n8n-nodes-evolution-api-v2/tags).
+This project uses [SemVer](http://semver.org/) for versioning. To see available versions, check the [tags in this repository](https://github.com/farazpawle/n8n-nodes-evolution-api-v2-eng/tags).
 
 ## 🆘 Support
 
 If you encounter any problems or have questions, please:
 
 1. Check the [Evolution API documentation](https://doc.evolution-api.com/)
-2. Open an [issue on GitHub](https://github.com/farazpawle/n8n-nodes-evolution-api-v2/issues)
+2. Open an [issue on GitHub](https://github.com/farazpawle/n8n-nodes-evolution-api-v2-eng/issues)
 3. Contact via email: farazkhld@gmail.com 
