@@ -10,7 +10,7 @@ export class EvolutionApi implements INodeType {
     description: INodeTypeDescription = {
         displayName: 'Evolution API',
         name: 'evolutionApi',
-        icon: 'file:evolutionApi.svg',
+        icon: 'evolutionApi',
         group: ['transform'],
         version: 2,
         subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
